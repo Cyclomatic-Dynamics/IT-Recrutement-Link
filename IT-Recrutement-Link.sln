@@ -7,6 +7,10 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "IT-Recrutement-Link", "IT-R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole1", "WebRole1\WebRole1.csproj", "{3D48FA1A-E046-4A25-9629-F5EEF299DDDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Domain", "IT-Recrutement-Link.Domain\IT-Recrutement-Link.Domain.csproj", "{44D62338-53D8-4344-9580-4ABF1D562FCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.DataAccess", "IT-Recrutement-Link.DataAccess\IT-Recrutement-Link.DataAccess.csproj", "{288A1550-4530-4BA5-A597-CD75F5322827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{3D48FA1A-E046-4A25-9629-F5EEF299DDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D48FA1A-E046-4A25-9629-F5EEF299DDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D48FA1A-E046-4A25-9629-F5EEF299DDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D62338-53D8-4344-9580-4ABF1D562FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D62338-53D8-4344-9580-4ABF1D562FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D62338-53D8-4344-9580-4ABF1D562FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D62338-53D8-4344-9580-4ABF1D562FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288A1550-4530-4BA5-A597-CD75F5322827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288A1550-4530-4BA5-A597-CD75F5322827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288A1550-4530-4BA5-A597-CD75F5322827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288A1550-4530-4BA5-A597-CD75F5322827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
