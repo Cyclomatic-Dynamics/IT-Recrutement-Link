@@ -11,6 +11,7 @@ namespace IT_Recrutement_Link.Domain.Entities
         Software_engeneering,
         Telecomunication,
         Agriculture,
-        Art
+        Art,
+        Mecanics
     }
 }
