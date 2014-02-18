@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace IT_Recrutement_Link.DataAccess.Infrastructure
 {
-   public  class UnitOfWork<T> where T :class
+   public  class UnitOfWork<T> where T :class 
     {
        private Context context;
        IDatabaseFactory dbfact;
