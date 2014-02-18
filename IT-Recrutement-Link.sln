@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Service.Test", "IT-Recrutement-Link.Service.Test\IT-Recrutement-Link.Service.Test.csproj", "{0270DB17-B0D2-4A16-AA31-289590A0E142}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.DataAccess.Test", "IT-Recrutement-Link.DataAccess.Test\IT-Recrutement-Link.DataAccess.Test.csproj", "{F47BFDE2-5B9A-4833-B4AF-0450777A4CF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F47BFDE2-5B9A-4833-B4AF-0450777A4CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47BFDE2-5B9A-4833-B4AF-0450777A4CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47BFDE2-5B9A-4833-B4AF-0450777A4CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47BFDE2-5B9A-4833-B4AF-0450777A4CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
