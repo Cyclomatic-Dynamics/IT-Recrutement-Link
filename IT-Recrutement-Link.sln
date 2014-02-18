@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Domain.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Web", "IT-Recrutement-Link.Web\IT-Recrutement-Link.Web.csproj", "{89C3B4EA-0986-4F9D-97D9-D1D98DEA112D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Service", "IT-Recrutement-Link.Service\IT-Recrutement-Link.Service.csproj", "{79AA4151-4CD0-4DE9-B321-1CB269DF5D60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT-Recrutement-Link.Service.Test", "IT-Recrutement-Link.Service.Test\IT-Recrutement-Link.Service.Test.csproj", "{0270DB17-B0D2-4A16-AA31-289590A0E142}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{89C3B4EA-0986-4F9D-97D9-D1D98DEA112D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89C3B4EA-0986-4F9D-97D9-D1D98DEA112D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89C3B4EA-0986-4F9D-97D9-D1D98DEA112D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79AA4151-4CD0-4DE9-B321-1CB269DF5D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AA4151-4CD0-4DE9-B321-1CB269DF5D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AA4151-4CD0-4DE9-B321-1CB269DF5D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AA4151-4CD0-4DE9-B321-1CB269DF5D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0270DB17-B0D2-4A16-AA31-289590A0E142}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

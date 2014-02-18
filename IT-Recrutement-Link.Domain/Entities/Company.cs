@@ -17,12 +17,13 @@ namespace IT_Recrutement_Link.Domain.Entities
         public String Address { get; set; }
         public CompanySizeEnum CompanySize { get; set; }
         public DateTime? CreationDate { get; set; }
-        public bool? AcceptSpontanousApplication { get; set; }
+        public bool AcceptSpontanousApplication { get; set; }
         public virtual IList<string> Keywords { get; set; }
         public Company(string Name)
         {
             this.Name = Name;
             Keywords = new List<string>();
+            AcceptSpontanousApplication = false;
         }
         public Job CreateJob(string jobName)
         {
