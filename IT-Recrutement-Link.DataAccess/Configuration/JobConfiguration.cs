@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.Data.Entity.ModelConfiguration;
 using IT_Recrutement_Link.Domain.Entities;
 
-
 namespace IT_Recrutement_Link.DataAccess.Configuration
 {
-    public class CompanyConfiguration : EntityTypeConfiguration<Company>
+    public class JobConfiguration : EntityTypeConfiguration<Job>
     {
-        public CompanyConfiguration()
+        public JobConfiguration()
         {
-
+            ToTable("Jobs");
+            HasMany(s => s.Students).WithRequired(c => c.Companies).Map();
         }
     }
 }

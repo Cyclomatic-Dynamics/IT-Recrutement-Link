@@ -42,6 +42,9 @@
     <Compile Include="Entities\ActivitySectorEnum.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\CompanySizeEnum.cs" />
+    <Compile Include="Entities\CompetenceSectorEnum.cs" />
+    <Compile Include="Entities\Job.cs" />
+    <Compile Include="Entities\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
