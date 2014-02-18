@@ -21,5 +21,13 @@ namespace IT_Recrutement_Link.Domain.Entities
         public string ProfilePictureUrl { get; set; }
         public CompetenceSectorEnum CompetenceSectorName { get; set; }
         public virtual IList<string> Keywords { get; set; }
+        public Student(string Name)
+        {
+            this.Name = Name;
+        }
+        public void Apply(Job job)
+        {
+            job.Register(this);
+        }
     }
 }
