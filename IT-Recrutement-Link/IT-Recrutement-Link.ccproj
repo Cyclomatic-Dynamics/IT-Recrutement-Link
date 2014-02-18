@@ -37,22 +37,26 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebRole1\WebRole1.csproj">
-      <Name>WebRole1</Name>
-      <Project>{3d48fa1a-e046-4a25-9629-f5eef299dddd}</Project>
-      <Private>True</Private>
-      <RoleType>Web</RoleType>
-      <RoleName>WebRole1</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <Folder Include="IT-Recrutement-Link.WebContent\" />
     <Folder Include="WebRole1Content\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IT-Recrutement-Link.WebContent\diagnostics.wadcfg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="WebRole1Content\diagnostics.wadcfg">
       <SubType>Content</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IT-Recrutement-Link.Web\IT-Recrutement-Link.Web.csproj">
+      <Name>IT-Recrutement-Link.Web</Name>
+      <Project>{89c3b4ea-0986-4f9d-97d9-d1d98dea112d}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>IT-Recrutement-Link.Web</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
