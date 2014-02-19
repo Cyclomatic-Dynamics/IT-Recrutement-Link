@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace IT_Recrutement_Link.Service
 {
-    public interface IUnitOfWork<T> where T :class
+    public interface IUnitOfWork
     {
-        void Add(T entity);
+        void Add<T>(T entity) where T : class;
         void Commit();
         
     }

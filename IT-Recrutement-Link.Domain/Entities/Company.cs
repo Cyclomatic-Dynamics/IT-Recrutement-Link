@@ -19,6 +19,10 @@ namespace IT_Recrutement_Link.Domain.Entities
         public DateTime? CreationDate { get; set; }
         public bool AcceptSpontanousApplication { get; set; }
         public virtual IList<string> Keywords { get; set; }
+        public Company()
+        {
+
+        }
         public Company(string Name)
         {
             this.Name = Name;

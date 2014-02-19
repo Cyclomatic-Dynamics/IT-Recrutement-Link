@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IT_Recrutement_Link.Domain.Entities
 {
-    public class CompetenceSectorEnum
+    public enum CompetenceSectorEnum
     {
     }
 }

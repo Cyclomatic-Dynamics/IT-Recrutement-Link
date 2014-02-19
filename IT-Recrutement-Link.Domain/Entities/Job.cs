@@ -9,16 +9,17 @@ namespace IT_Recrutement_Link.Domain.Entities
     public class Job
     {
         public int Id { get; set; }
-        public string Name;
-        private Company company;
+        public string Name { get; set; }
+        private Company company { get; set; }
         public IList<Student> registeredStudents { get; private set; }
+        public Job() { }
         public Job(Company company, string Name)
         {
             registeredStudents = new List<Student>();
             this.Name = Name;
             this.company = company;
         }
-        
+
         public void Register(Student student)
         {
             registeredStudents.Add(student);
