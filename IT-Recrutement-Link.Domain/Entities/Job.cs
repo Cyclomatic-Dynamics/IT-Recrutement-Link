@@ -18,7 +18,7 @@ namespace IT_Recrutement_Link.Domain.Entities
             this.Name = Name;
             this.company = company;
         }
-        //gggg
+        
         public void Register(Student student)
         {
             registeredStudents.Add(student);
