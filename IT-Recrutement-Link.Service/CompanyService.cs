@@ -9,7 +9,7 @@ namespace IT_Recrutement_Link.Service
 {
     public class CompanyService
     {
-        public CompanyService(IBlobStorage storage, IUnitOfWork<Company> unitOfWork)
+        public CompanyService(IBlobStorage storage, IUnitOfWork unitOfWork)
         {
 
         }

@@ -37,12 +37,12 @@ namespace IT_Recrutement_Link.Service.Test
         }
         
     }
-    class MockUnitOfWork<T> : IUnitOfWork<T> where T :class
+    class MockUnitOfWork : IUnitOfWork
     {
         private int addCounter = 0;
         private int commitCounter = 0;
-        private T savedEntity;
-        public void Add(T entity)
+        private Object savedEntity;
+        public void Add<T>(T entity) where T :class
         {
             savedEntity = entity;
             ++addCounter;
@@ -59,7 +59,7 @@ namespace IT_Recrutement_Link.Service.Test
         {
             return commitCounter == 1;
         }
-        public T getSavedEntity()
+        public Object getSavedEntity()
         {
             return savedEntity;
         }

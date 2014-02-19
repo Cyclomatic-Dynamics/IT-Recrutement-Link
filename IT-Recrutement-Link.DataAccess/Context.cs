@@ -15,9 +15,7 @@ namespace IT_Recrutement_Link.DataAccess
         public Context(){
             Database.SetInitializer<Context>(new ContextInitializer());      
         }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Job> Jobs { get; set; }
+        
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder) 
         {
@@ -56,7 +54,7 @@ namespace IT_Recrutement_Link.DataAccess
         }
         
        
-        internal class ContextInitializer : DropCreateDatabaseAlways<Context> { }
+        private class ContextInitializer : DropCreateDatabaseAlways<Context> { }
         
     }
 }
