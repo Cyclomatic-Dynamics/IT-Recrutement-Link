@@ -34,7 +34,7 @@ namespace IT_Recrutement_Link.DataAccess.Test
         public void ShouldFindEntityWithAnExpression()
         {
             Company company = new Company("Capcom");
-            Student student = new Student("blob");
+            Student student = new Student("Chedy");
             student.LastName = "Kablam";
             Job job = company.CreateJob("PoliceMan");
             context.Add<Job>(job);

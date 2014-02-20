@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityNotFoundException.cs" />
     <Compile Include="IBlobStorage.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="IUnitOfWork.cs" />
