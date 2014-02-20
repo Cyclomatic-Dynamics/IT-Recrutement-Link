@@ -9,7 +9,9 @@ namespace IT_Recrutement_Link.Domain.Entities
     public class Company
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set;}
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
         public string VideoUrl { get; set; }
         public string SlidesUrl { get; set; }
         public string LogoPictureUrl { get; set; }

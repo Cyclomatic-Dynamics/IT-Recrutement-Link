@@ -13,7 +13,6 @@ namespace IT_Recrutement_Link.Domain.Test
             string jobName = "Cloud Manager";
             Job job = company.CreateJob(jobName);
             Assert.AreEqual(jobName, job.Name);
-
         }
     }
 }
