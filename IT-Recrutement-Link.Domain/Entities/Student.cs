@@ -11,7 +11,7 @@ namespace IT_Recrutement_Link.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public DateTime? DateNaissance { get; set; }
+        public DateTime DateNaissance { get; set; }
         public List<string> University { get; set; }
         public List<string> Diplome { get; set; }
         public List<string> Formation { get; set; }        

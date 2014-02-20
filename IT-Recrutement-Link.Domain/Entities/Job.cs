@@ -10,7 +10,7 @@ namespace IT_Recrutement_Link.Domain.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        private Company company { get; set; }
+        public Company company { get;private set; }
         public IList<Student> registeredStudents { get; private set; }
         public Job() { }
         public Job(Company company, string Name)

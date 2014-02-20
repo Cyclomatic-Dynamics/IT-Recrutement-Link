@@ -13,7 +13,18 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
     {
         public CompanyConfiguration()
         {
-
+            ToTable("Companies");
+            HasKey(c => c.Id);
+            Property(c => c.Name).HasMaxLength(50).IsRequired();
+            Property(c => c.VideoUrl).HasMaxLength(100).IsRequired();
+            Property(c => c.SlidesUrl).HasMaxLength(100).IsRequired();
+            Property(c => c.Address).HasMaxLength(100).IsRequired();
+            Property(c => c.CreationDate).IsRequired();
+            Property(c => c.AcceptSpontanousApplication).IsRequired();
+            Property(c => c.ActivitySectorName).IsRequired();
+            Property(c => c.Address).HasMaxLength(100).IsRequired();
+            Property(c => c.CompanySize).IsRequired();
+            
         }
     }
 }

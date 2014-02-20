@@ -13,7 +13,10 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
         public JobConfiguration()
         {
             ToTable("Jobs");
-            //HasMany(s => s.WithRequired(c => c.Companies)).Map();
+            HasKey(j =>j.Id);
+            Property(j => j.Name).IsRequired();
+            
+            
         }
     }
 }
