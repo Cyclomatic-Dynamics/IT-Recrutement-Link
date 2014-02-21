@@ -11,14 +11,25 @@ namespace IT_Recrutement_Link.Service
 {
     public class JobService
     {
-        public JobService(IUnitOfWork unitOfWork)
+        private IUnitOfWork unitOfWork;
+        public JobService(IUnitOfWork unit)
         {
-
+            unitOfWork = unit;
         }
 
-        public void AddJob()
+        
+        public Job ViewJob(int id)
         {
-
+            try
+            {
+            return unitOfWork.FindById<Job>(id);
+            }
+            catch (Exception)
+            {
+                throw new EntityNotFoundException<Company>(id);
+            }
         }
+        
+        
     }
 }

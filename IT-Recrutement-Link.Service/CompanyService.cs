@@ -50,5 +50,21 @@ namespace IT_Recrutement_Link.Service
                 return BitConverter.ToString(hash).Replace("-", String.Empty).ToLower();
             }
         }
+        public void AddJob(string jobname, Company company)
+        {
+            Job job = company.CreateJob(jobname);
+            unitOfWork.Add<Job>(job);
+            unitOfWork.Commit();
+        }
+        public void ModifyJob(Job job)
+        {
+            unitOfWork.Update<Job>(job);
+            unitOfWork.Commit();
+        }
+        public void RemoveJob(Job job)
+        {
+            unitOfWork.Remove<Job>(job);
+            unitOfWork.Commit();
+        }
     }
 }
