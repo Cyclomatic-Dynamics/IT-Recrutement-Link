@@ -50,20 +50,21 @@ namespace IT_Recrutement_Link.Service
                 return BitConverter.ToString(hash).Replace("-", String.Empty).ToLower();
             }
         }
-
-        public static object GetProductsByCategory(string recherche)
+        public void AddJob(string jobname, Company company)
         {
-            throw new NotImplementedException();
+            Job job = company.CreateJob(jobname);
+            unitOfWork.Add<Job>(job);
+            unitOfWork.Commit();
         }
-
-        public static object GetCategorys(string recherche)
+        public void ModifyJob(Job job)
         {
-            throw new NotImplementedException();
+            unitOfWork.Update<Job>(job);
+            unitOfWork.Commit();
         }
-
-        public static object GetCategorys()
+        public void RemoveJob(Job job)
         {
-            throw new NotImplementedException();
+            unitOfWork.Remove<Job>(job);
+            unitOfWork.Commit();
         }
     }
 }
