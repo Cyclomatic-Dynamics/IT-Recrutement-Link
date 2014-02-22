@@ -17,6 +17,7 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
             Property(j => j.Name).IsRequired();
             
             
+            
         }
     }
 }

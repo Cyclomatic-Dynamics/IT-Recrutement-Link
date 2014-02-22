@@ -10,16 +10,43 @@ namespace IT_Recrutement_Link.Service
 {
     public class StudentService
     {
-        public StudentService(IUnitOfWork storage, IBlobStorage unitOfWork)
+        private IBlobStorage blobStorage;
+        private IUnitOfWork unitOfWork;
+        public StudentService(IBlobStorage storage, IUnitOfWork unit)
         {
-
+            blobStorage = storage;
+            unitOfWork = unit;
         }
-        public void AddStudent(string name, string Lastname, FileStream video, FileStream image,
-            FileStream slide, IList<string> keywords, DateTime dateNaissance,
-            List<string> university, List<string> diplome, List<string> formation,
-            List<string> experience, CompetenceSectorEnum competenceSectorName)
+        public void AddStudent(Student student, FileStream video, FileStream image,
+            FileStream slide)
         {
-
+            student.VideoUrl = blobStorage.upLoad(video);
+            student.ProfilePictureUrl = blobStorage.upLoad(image);
+            student.SlidesUrl = blobStorage.upLoad(slide);
+            unitOfWork.Add<Student>(student);
+            unitOfWork.Commit();
+        }
+        public Student ViewStudent(int id)
+        {
+            try
+            {
+                return unitOfWork.FindById<Student>(id);
+            }
+            catch (Exception)
+            {
+                throw new EntityNotFoundException<Company>(id);
+            }
+        }
+        public void ModifyStudent(Student student)
+        {
+            unitOfWork.Update<Student>(student);
+            unitOfWork.Commit();
+        }
+        public void ApplyJob(Job job, Student student)
+        {
+            student.Apply(job);
+            unitOfWork.Update<Job>(job);
+            unitOfWork.Commit();
         }
     }
 }
