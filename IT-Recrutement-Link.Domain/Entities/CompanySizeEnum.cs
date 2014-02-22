@@ -8,7 +8,7 @@ namespace IT_Recrutement_Link.Domain.Entities
 {
     public enum CompanySizeEnum
     {
-        very_small,
+        very_small ,
         small,
         medium,
         large

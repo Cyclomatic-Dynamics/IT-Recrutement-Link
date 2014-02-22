@@ -50,5 +50,20 @@ namespace IT_Recrutement_Link.Service
                 return BitConverter.ToString(hash).Replace("-", String.Empty).ToLower();
             }
         }
+
+        public static object GetProductsByCategory(string recherche)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static object GetCategorys(string recherche)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static object GetCategorys()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

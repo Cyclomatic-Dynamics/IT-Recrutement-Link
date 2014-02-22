@@ -1,18 +1,9 @@
-﻿
+﻿@model IT_Recrutement_Link.Domain.Entities.Company
+
 @{
+    
     ViewBag.Title = "Register Your Company";
 }
-
-
-
-    <title>s'inscrire</title>
-
-    <!---------- CSS ------------>
-    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
-
-</head>
-
-<body>
 
     <!--BEGIN #signup-form -->
     <div id="signup-form">
@@ -30,13 +21,14 @@
             </div>
             <p>Please complete the fields below, ensuring you use a valid email address as you will be sent a validation code which you will need the first time you login to the site.</p>
 
-
-            <form id="send" action="">
-
+            @using (Html.BeginForm(new { id = "send" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
                 <p>
-
-                    Company name *  @Html.TextBox("Company name")
-                   
+                    Company name *  @Html.TextBoxFor(c => c.Name)
+                                    @Html.ValidationMessageFor(c => c.Name)
+  
                 </p>
 
                 <p>
@@ -45,7 +37,6 @@
                 </p>
                 <p>
                     Verify password * @Html.Password("passwd")
-
                 </p>
 
                 <p>
@@ -63,51 +54,16 @@
                 </p>
 
                 <p>
-                  Country * @{
-    var items = new List<SelectListItem>{
-        new SelectListItem {Value = "1", Text = "Algérie"},
-        new SelectListItem {Value = "2", Text = "Tunisie"},
-        new SelectListItem {Value = "3", Text = "Turky"},
-        new SelectListItem {Value = "4", Text = "togo"},
-        new SelectListItem {Value = "5", Text = "USA"},
-        new SelectListItem {Value = "6", Text = "UK"},
-        new SelectListItem {Value = "7", Text = "UAE"},
-        new SelectListItem {Value = "8", Text = "Marroc"},
-        new SelectListItem {Value = "9", Text = "Nigéria"},
-        new SelectListItem {Value = "10", Text = "Japan"},
-        new SelectListItem {Value = "11", Text = "France"},
-        new SelectListItem {Value = "5", Text = "Germany"},
-        new SelectListItem {Value = "5", Text = "Suiss"},
-        new SelectListItem {Value = "5", Text = "Italie"},
-        new SelectListItem {Value = "5", Text = "Serby"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        new SelectListItem {Value = "5", Text = "Black"},
-        
-    };
-    @Html.DropDownList("Country", items)
-}
+                  
+                    Country * @Html.DropDownListFor();
+                                   
                 </p>
 
                 <p>
-
-                    <button id="submit" type="submit">Submit</button>
+                    <input type="submit" value="Registe"/>
                 </p>
 
-            </form>
-
+            }
             <div id="required">
                 <p>
                     * Required Fields<br />
@@ -115,14 +71,11 @@
                 </p>
             </div>
 
-
         </div>
 
         <!--END #signup-inner -->
     </div>
 
     <!--END #signup-form -->
-    </div>
+    
 
-</body>
-</html>

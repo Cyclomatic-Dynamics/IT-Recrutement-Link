@@ -3,16 +3,16 @@
     ViewBag.Title = "DisplayCompanyProfil";
 }
 
-<h2>DisplayCompanyProfil</h2>
-@using (Html.BeginForm())
-{
-    @Html.Label("Name:") 
-    @Html.TextBox( "name", "", null, null)
+<h2>Display Company Profil</h2>
+<fieldset>
+    <legend>Companys</legend>
+       <div class="display-label">
+            @Html.DisplayName("Name")
+       </div>
+    <div class="display-label">
+        @Html.DisplayName("name")
+    </div>
+</fieldset>
+
    
-<p>
-        <input type="submit" value="Register" />
-    </p>
-}
-
-
 
