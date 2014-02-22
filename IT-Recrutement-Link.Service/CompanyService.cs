@@ -11,23 +11,32 @@ namespace IT_Recrutement_Link.Service
 {
     public class CompanyService
     {
-        private IBlobStorage blobStorage;
         private IUnitOfWork unitOfWork;
-        public CompanyService(IBlobStorage storage, IUnitOfWork unitOfWork)
+        public CompanyService(IUnitOfWork unitOfWork)
         {
-            blobStorage = storage;
             this.unitOfWork = unitOfWork;
-
         }
-        public void AddCompany(Company company, string password, FileStream video,
-            FileStream image, FileStream slide)
+        public void AddCompany(Company company, string password)
         {
             company.PasswordHash = Hash(password);
-            company.VideoUrl = blobStorage.upLoad(video);
-            company.LogoPictureUrl = blobStorage.upLoad(image);
-            company.SlidesUrl = blobStorage.upLoad(slide);
             unitOfWork.Add<Company>(company);
             unitOfWork.Commit();
+        }
+        public void UpdateCompany(Company company)
+        {
+            unitOfWork.Update<Company>(company);
+            unitOfWork.Commit();
+        }
+        public Company LoginCompany(string email, string password)
+        {
+            Company company = unitOfWork.FindOne<Company>(email);
+            if (Hash(password).Equals(company.PasswordHash))
+            {
+                return company;
+            }
+            else {
+                throw new WrongPasswordException();
+            }
         }
         public Company ViewCompany(int id)
         {

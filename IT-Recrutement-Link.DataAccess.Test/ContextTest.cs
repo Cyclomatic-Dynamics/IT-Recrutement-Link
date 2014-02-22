@@ -13,7 +13,12 @@ namespace IT_Recrutement_Link.DataAccess.Test
         [TestMethod]
         public void ShouldAddEntity()
         {
-            Student student = new Student("blob");
+            Student student = new Student
+            {
+            Name = "Bob",
+            LastName = "Orton",
+            
+            };
             student.LastName = "Kablam";
             context.Add<Student>(student);
             context.Commit();

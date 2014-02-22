@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
+
 namespace IT_Recrutement_Link.Service
 {
-    public interface IBlobStorage
+    public class CompanyNotExistException :Exception
     {
-        string upLoad(FileStreamWrapper stream);
     }
 }
