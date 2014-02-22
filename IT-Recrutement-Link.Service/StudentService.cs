@@ -10,19 +10,14 @@ namespace IT_Recrutement_Link.Service
 {
     public class StudentService
     {
-        private IBlobStorage blobStorage;
         private IUnitOfWork unitOfWork;
-        public StudentService(IBlobStorage storage, IUnitOfWork unit)
+        public StudentService(IUnitOfWork unit)
         {
-            blobStorage = storage;
             unitOfWork = unit;
         }
-        public void AddStudent(Student student, FileStream video, FileStream image,
-            FileStream slide)
-        {
-            student.VideoUrl = blobStorage.upLoad(video);
-            student.ProfilePictureUrl = blobStorage.upLoad(image);
-            student.SlidesUrl = blobStorage.upLoad(slide);
+        public void AddStudent(Student student, string password)
+        { 
+            student.PasswordHash = HashUtil.SHA1Hash(password);
             unitOfWork.Add<Student>(student);
             unitOfWork.Commit();
         }
@@ -42,11 +37,23 @@ namespace IT_Recrutement_Link.Service
             unitOfWork.Update<Student>(student);
             unitOfWork.Commit();
         }
-        public void ApplyJob(Job job, Student student)
+        public void ApplyStudentToJob(Student student, Job job)
         {
             student.Apply(job);
             unitOfWork.Update<Job>(job);
             unitOfWork.Commit();
         }
+        public Student LoginStudent(string email, string password)
+        {
+            Student student = unitOfWork.FindOne<Student>(email);
+            if (HashUtil.SHA1Hash(password).Equals(student.PasswordHash))
+            {
+                return student;
+            }
+            else {
+                throw new WrongPasswordException();
+            }
+        }
+        
     }
 }

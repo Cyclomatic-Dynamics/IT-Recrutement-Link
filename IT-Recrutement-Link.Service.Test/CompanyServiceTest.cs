@@ -49,7 +49,7 @@ namespace IT_Recrutement_Link.Service.Test
         public void shouldUpdateCompany()
         {
             Company updatedCompany = company;
-            service.UpdateCompany(company);
+            service.ModifyCompany(company);
             unitOfWork.Verify(unit => unit.Update<Company>(updatedCompany), Times.Once());
             unitOfWork.Verify(unit => unit.Commit(), Times.Once());
         }
