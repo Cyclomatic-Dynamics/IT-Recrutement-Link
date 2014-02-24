@@ -11,7 +11,11 @@ namespace IT_Recrutement_Link.Web.Controllers
 {
     public class CompanyController : Controller
     {
-        
+        private CompanyService companyService;
+        public CompanyController(CompanyService service)
+        {
+            companyService = service;
+        }
         [HttpGet]
         public ActionResult AddCompanyForm()
         {
@@ -40,12 +44,13 @@ namespace IT_Recrutement_Link.Web.Controllers
         */
         public ActionResult EditCompanyProfil()
         {
-
             return View();
         }
         public ActionResult DisplayCompanyProfil()
         {
-            //var Company = CompanySevice.getCompany(Id);
+            int companyId = Convert.ToInt32(((string)Session["id"]));
+            Company company = companyService.ViewCompany(companyId);
+            ViewBag.Name = company.Name;
             return View();
         }
 
