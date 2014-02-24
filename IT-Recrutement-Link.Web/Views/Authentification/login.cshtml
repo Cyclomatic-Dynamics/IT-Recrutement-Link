@@ -13,6 +13,7 @@
         @Html.LabelFor(m => m.UserName)
     </div>
              <br />
+   
     <div class="editor-label">
         @Html.TextBoxFor(m => m.UserName)
         @Html.ValidationMessageFor(m => m.UserName)
@@ -25,6 +26,13 @@
         @Html.PasswordFor(m => m.Password)
         @Html.ValidationMessageFor(m => m.Password)
        </div>
+             <br />
+             <br />
+    <div class="editor-field">
+        
+        @Html.RadioButton("Choice", "Company", new { id = "chooseCompany" })
+        @Html.RadioButton("Choice", "Student", new { id = "chooseStudent" })    
+    </div>
              <br />
              <br />
     <div class="editor-field">

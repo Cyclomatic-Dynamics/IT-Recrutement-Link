@@ -71,4 +71,11 @@ namespace IT_Recrutement_Link.Web.Controllers
             return RedirectToAction("Login", "Account", null);
         }
     }
+    public class TestController
+    {
+        public ActionResult SelectChoice()
+        {
+            return SelectChoice();
+        }
+    }
 }
