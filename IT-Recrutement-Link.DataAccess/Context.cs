@@ -43,7 +43,8 @@ namespace IT_Recrutement_Link.DataAccess
         }
         public T FindById<T>(int id) where T : class
         {
-            return Set<T>().Find(id);
+            return  Set<T>().Find(id);
+            
         }
         public IList<T> FindMany<T>(Expression<Func<T, bool>> where) where T : class
         {

@@ -45,14 +45,22 @@ namespace IT_Recrutement_Link.Service
         }
         public Student LoginStudent(string email, string password)
         {
-            Student student = unitOfWork.FindMany<Student>(s => (s.Email == email)).
+            Student student = unitOfWork.FindMany<Student>(s => (s.Email.Equals(email))).
                 FirstOrDefault<Student>();
-            if (HashUtil.SHA1Hash(password).Equals(student.PasswordHash))
+            if (student != null)
             {
-                return student;
+                if (HashUtil.SHA1Hash(password).Equals(student.PasswordHash))
+                {
+                    return student;
+                }
+                else
+                {
+                    throw new WrongCredentialException();
+                }
             }
-            else {
-                throw new WrongPasswordException();
+            else
+            {
+                throw new WrongCredentialException();
             }
         }
         
