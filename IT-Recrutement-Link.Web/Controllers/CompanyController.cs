@@ -49,6 +49,10 @@ namespace IT_Recrutement_Link.Web.Controllers
             return View();
         }
 
+
+        public static string id { get; set; }
+
+        public static string passwordhash { get; set; }
     }
 
 
