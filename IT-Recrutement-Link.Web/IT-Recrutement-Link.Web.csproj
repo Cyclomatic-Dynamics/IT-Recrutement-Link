@@ -210,14 +210,16 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthentificationController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
-    <Compile Include="Controllers\CountryUtil.cs" />
+    <Compile Include="Controllers\CountryUtil.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Authentification.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
