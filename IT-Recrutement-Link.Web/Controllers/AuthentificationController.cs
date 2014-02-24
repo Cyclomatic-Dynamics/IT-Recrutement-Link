@@ -1,14 +1,14 @@
-﻿using System;
+﻿using IT_Recrutement_Link.Domain.Entities;
+using IT_Recrutement_Link.Service;
+using IT_Recrutement_Link.Web.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using IT_Recrutement_Link.Web.Models;
-using System.ComponentModel.DataAnnotations;
-using IT_Recrutement_Link.Service;
-using IT_Recrutement_Link.Domain.Entities;
-
     
 namespace IT_Recrutement_Link.Web.Controllers
 {
@@ -18,7 +18,8 @@ namespace IT_Recrutement_Link.Web.Controllers
         private StudentService studentService;
         public AuthentificationController(CompanyService cService, StudentService sService)
         {
-
+            companyService = cService;
+            studentService = sService;
         }
         [HttpGet]
         [AllowAnonymous]
@@ -37,33 +38,29 @@ namespace IT_Recrutement_Link.Web.Controllers
         [AllowAnonymous]
         public ActionResult Login(Login model, string returnUrl = "")
         {
-
             if (ModelState.IsValid)
             {
-                /*if (Membership.ValidateUser(model.UserName, model.Password))
+                try
                 {
-                    FormsAuthentication.RedirectFromLoginPage(model.UserName, model.RememberMe);
+                    NameValueCollection nvc = Request.Form;
+                    Company company = companyService.LoginCompany(nvc["login"], nvc["password"]);
+                    HttpCookie myCookie = new HttpCookie("myCookie"); 
+                    myCookie.Values.Add("id", company.Id.ToString());
+                    myCookie.Expires = DateTime.Now.AddDays(12);
+                    Response.Cookies.Add(myCookie);
+                    return View("DisplayCompany");
                 }
-                
-                ModelState.AddModelError("", "Incorrect username and/or password");*/
-                CompanyService service = new CompanyService(null, null);
-                Company c = service.Login(email, password);
-                HttpCookie myCookie = new HttpCookie("myCookie");
-
-                //Add key-values in the cookie
-                myCookie.Values.Add("id", c.Id);
-                
-                //set cookie expiry date-time. Made it to last for next 12 hours.
-                myCookie.Expires = DateTime.Now.AddDays(12);
-
-                //Most important, write the cookie to client.
-                Response.Cookies.Add(myCookie);
-
-
-
+                catch (WrongPasswordException e)
+                {
+                    ViewBag.WrongPasswordMessage = "Wrong Password";
+                    return View(model);                
+                }
             }
-
-            return View(model);
+            else
+            {
+                return View(model);
+            }
+            
         }
 
         [HttpPost]

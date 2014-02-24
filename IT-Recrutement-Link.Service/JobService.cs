@@ -16,7 +16,6 @@ namespace IT_Recrutement_Link.Service
         {
             unitOfWork = unit;
         }
-
         
         public Job ViewJob(int id)
         {
@@ -29,7 +28,16 @@ namespace IT_Recrutement_Link.Service
                 throw new EntityNotFoundException<Company>(id);
             }
         }
-        
+
+        public void RemoveJob(int id)
+        {
+            RemoveJob(unitOfWork.FindById<Job>(id));
+        }
+        public void RemoveJob(Job job)
+        {
+            unitOfWork.Remove<Job>(job);
+            unitOfWork.Commit();
+        }
         
     }
 }

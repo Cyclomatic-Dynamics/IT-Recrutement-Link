@@ -6,6 +6,7 @@
 
 @Html.ValidationSummary(true)
 <br />
+<div> @ViewBag.WrongPasswordMessage !!</div>
 @using (Html.BeginForm(null, null, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
 {
     <div class="editor-label">

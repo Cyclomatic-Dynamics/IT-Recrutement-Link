@@ -4,31 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace IT_Recrutement_Link.Domain.Entities
 {
+    [Table("Companies")]
     public class Company
     {
         [Key]
         public int Id { get; set; }
+        [MaxLength(50)]
         [Required(ErrorMessage="Name Required")]
         public string Name { get; set;}
         [Required]
         public string Email { get; set; }
         [Required]
         public string PasswordHash { get; set; }
-        
-        public CountryEnum Country { get; set; }
+        [Required]
         public string VideoUrl { get; set; }
+        [Required]
         public string SlidesUrl { get; set; }
+        [Required]
         public string LogoPictureUrl { get; set; }
+        [Required]
         public ActivitySectorEnum ActivitySectorName { get; set; }
+        [Required]
         public String Address { get; set; }
+        [Required]
         public CompanySizeEnum CompanySize { get; set; }
+        [Required]
         public DateTime? CreationDate { get; set; }
+        [Required]
         public bool AcceptSpontanousApplication { get; set; }
-        
+        [Required]
         public virtual IList<string> Keywords { get; set; }
         public Company()
         {

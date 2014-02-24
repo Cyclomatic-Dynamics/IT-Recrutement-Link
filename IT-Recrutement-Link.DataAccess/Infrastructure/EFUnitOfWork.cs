@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-namespace IT_Recrutement_Link.Service
+
+namespace IT_Recrutement_Link.DataAccess.Infrastructure
 {
-    public interface IBlobStorage
+    public class EFUnitOfWork 
     {
-        string upLoad(FileStream stream);
     }
 }

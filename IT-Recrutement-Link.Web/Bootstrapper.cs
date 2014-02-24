@@ -1,9 +1,6 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
-using IT_Recrutement_Link.Domain;
-using IT_Recrutement_Link.Service;
-
 
 namespace IT_Recrutement_Link.Web
 {

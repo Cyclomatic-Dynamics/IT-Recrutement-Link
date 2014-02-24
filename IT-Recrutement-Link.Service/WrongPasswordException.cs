@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IT_Recrutement_Link.Domain.Entities
+namespace IT_Recrutement_Link.Service
 {
-    public enum CompetenceSectorEnum
+    public class WrongPasswordException :Exception
     {
-        Design
     }
 }

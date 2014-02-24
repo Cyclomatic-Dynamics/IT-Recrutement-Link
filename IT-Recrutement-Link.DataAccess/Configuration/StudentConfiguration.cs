@@ -15,6 +15,7 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
             ToTable("Students");
             HasKey(s => s.Id);
             Property(s => s.Email).HasMaxLength(50).IsRequired();
+            Property(c => c.PasswordHash).IsRequired();
             Property(s => s.Name).HasMaxLength(50).IsRequired();
             Property(s => s.LastName).HasMaxLength(50).IsRequired();
             Property(s => s.DateNaissance).IsRequired();
