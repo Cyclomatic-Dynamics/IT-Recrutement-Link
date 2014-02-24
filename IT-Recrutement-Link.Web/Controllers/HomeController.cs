@@ -22,7 +22,8 @@ namespace IT_Recrutement_Link.Web.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            IServiceProvider.
+            ViewBag.Message = "hello world ";
 
             return View();
         }
