@@ -8,5 +8,7 @@ namespace IT_Recrutement_Link.Domain.Entities
 {
     public enum CompetenceSectorEnum
     {
+        cloud_computing,
+        business_intelligence
     }
 }
