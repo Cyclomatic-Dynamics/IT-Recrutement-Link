@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace IT_Recrutement_Link.Domain.Entities
 {
+    [Table("Jobs")]
     public class Job
     {
+        [Key] 
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
-        private Company company { get; set; }
+        [Required]
+        public Company company { get; private set; }
+        [Required]
         public IList<Student> registeredStudents { get; private set; }
         public Job() { }
         public Job(Company company, string Name)

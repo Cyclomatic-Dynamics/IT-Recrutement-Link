@@ -8,5 +8,6 @@ namespace IT_Recrutement_Link.Domain.Entities
 {
     public enum CompetenceSectorEnum
     {
+        Design
     }
 }

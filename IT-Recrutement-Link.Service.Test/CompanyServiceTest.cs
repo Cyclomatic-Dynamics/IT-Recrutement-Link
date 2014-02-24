@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq.Expressions;
 using IT_Recrutement_Link.Domain.Entities;
 using Moq;
 namespace IT_Recrutement_Link.Service.Test
@@ -9,59 +10,87 @@ namespace IT_Recrutement_Link.Service.Test
     [TestClass]
     public class CompanyServiceTest
     {
+        private static IList<string> keywords = new List<string>(
+            new string[] { "CS", "IT" });
+
+        private Company company;
+        private Mock<IUnitOfWork> unitOfWork;
+        private CompanyService service;
+        [TestInitialize]
+        public void SetUp()
+        {
+            company = new Company
+        {
+            Name = "Hp",
+            Email = "hp@hp.com",
+            Keywords = keywords,
+            CreationDate = new DateTime(1980, 10, 10),
+            ActivitySectorName = ActivitySectorEnum.Software_engeneering,
+            Address = "36 Terry Street",
+            CompanySize = CompanySizeEnum.small,
+            AcceptSpontanousApplication = false
+        };
+            unitOfWork = new Mock<IUnitOfWork>();
+            service = new CompanyService(unitOfWork.Object);
+        }
         [TestMethod]
         public void shouldAddCompany()
         {
-            /*
-            //Build
-            Mock<IBlobStorage> storage = new Mock<IBlobStorage>();
-            MockUnitOfWork<Company> unitOfWork = new MockUnitOfWork<Company>();
-            CompanyService service = new CompanyService(storage.Object, unitOfWork);
-            IList<string> keywords = new List<string>(new string[] { "CS", "IT"});
-            Company company = new Company();
-            
-            FileStream video = null;
-            FileStream image = null;
-            FileStream slide = null;
-            //Operate
-            service.AddCompany("name", video, image, slide, ActivitySectorEnum.Software_engeneering, 
-                "36 Terry Street", CompanySizeEnum.small, new DateTime(2149, 10, 10), true, keywords);
-            //Check
-            //unitOfWork.getSavedEntity().;
-            storage.Verify(store => store.upLoad(video));
-            storage.Verify(store => store.upLoad(image));
-            storage.Verify(store => store.upLoad(slide));
-            Assert.IsTrue(unitOfWork.isAddCalledOnce());
-            Assert.IsTrue(unitOfWork.isCommitCalledOnce()); 
-            */   
+            Company newCompany = company;
+            string password = "Password2149";
+
+            service.AddCompany(newCompany, password);
+
+            Assert.AreNotEqual(password, newCompany.PasswordHash);
+            unitOfWork.Verify(unit => unit.Add<Company>(newCompany), Times.Once());
+            unitOfWork.Verify(unit => unit.Commit(), Times.Once());
         }
+        [TestMethod]
+        public void shouldUpdateCompany()
+        {
+            Company updatedCompany = company;
+            service.ModifyCompany(company);
+            unitOfWork.Verify(unit => unit.Update<Company>(updatedCompany), Times.Once());
+            unitOfWork.Verify(unit => unit.Commit(), Times.Once());
+        }
+        [TestMethod]
+        public void shouldLoginCompany()
+        {
+            /*company.PasswordHash = "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8";
+            Company loginCompany = company;
+            string email = company.Email;
+            string password = "password";
+            unitOfWork.Setup<Company>(unit => unit.FindById<Company>(
+                email)).Returns(loginCompany);
+            Company returnedCompany = service.LoginCompany(email, password);
+            unitOfWork.Verify(unit => unit.FindById<Company>(email),
+                Times.Once);*/
+        }
+        [TestMethod]
+        //[ExpectedException(typeof(CompanyNotExistException))]
+        public void shouldThrowCompanyNotFoundExceptionWhenCompanyNotExist()
+        {
+           /* string email = "notexsist@null.com";
+            unitOfWork.Setup(unit => 
+                unit.FindById<Company>(email)
+                ).Throws(new CompanyNotExistException());
+            service.LoginCompany(email, "");*/
+        }
+        [TestMethod]
+        //[ExpectedException(typeof(WrongPasswordException))]
+        public void shouldThrowWrongPasswordExceptionWhenPasswordIsWrong()
+        {
+            /*string email = company.Email;
+            string wrongPassword = "wrong_password";
+            company.PasswordHash = "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8";
+            Company challengedCompany = company;
+            unitOfWork.Setup(unit => 
+                unit.FindById<Company>(email)
+                ).Returns(challengedCompany);
+            service.LoginCompany(email, wrongPassword);
         
+             */
+         }
     }
-    class MockUnitOfWork : IUnitOfWork
-    {
-        private int addCounter = 0;
-        private int commitCounter = 0;
-        private Object savedEntity;
-        public void Add<T>(T entity) where T :class
-        {
-            savedEntity = entity;
-            ++addCounter;
-        }
-        public void Commit()
-        {
-            ++commitCounter;
-        }
-        public bool isAddCalledOnce()
-        {
-            return addCounter == 1;
-        }
-        public bool isCommitCalledOnce()
-        {
-            return commitCounter == 1;
-        }
-        public Object getSavedEntity()
-        {
-            return savedEntity;
-        }
-    }
+
 }
