@@ -12,7 +12,8 @@ namespace IT_Recrutement_Link.DataAccess
 {
     public class Context : DbContext
     {
-        public Context(){
+        public Context()
+        {
             Database.SetInitializer<Context>(new ContextInitializer());      
         }
         
