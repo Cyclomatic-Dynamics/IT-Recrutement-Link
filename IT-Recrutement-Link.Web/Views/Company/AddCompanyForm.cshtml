@@ -1,0 +1,81 @@
+﻿@model IT_Recrutement_Link.Domain.Entities.Company
+
+@{
+    
+    ViewBag.Title = "Register Your Company";
+}
+
+    <!--BEGIN #signup-form -->
+    <div id="signup-form">
+
+        <!--BEGIN #subscribe-inner -->
+        <div id="signup-inner">
+
+            <div class="clearfix" id="header">
+
+                <img id="signup-icon" src="./images/signup.png" alt="" />
+
+                <h1>Sign up your Company</h1>
+
+
+            </div>
+            <p>Please complete the fields below, ensuring you use a valid email address as you will be sent a validation code which you will need the first time you login to the site.</p>
+
+            @using (Html.BeginForm(new { id = "send" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <p>
+                    Company name *  @Html.TextBoxFor(c => c.Name)
+                                    @Html.ValidationMessageFor(c => c.Name)
+  
+                </p>
+
+                <p>
+                    password * @Html.Password("passwd")
+
+                </p>
+                <p>
+                    Verify password * @Html.Password("passwd")
+                </p>
+
+                <p>
+
+                  Email * @Html.TextBox("name", "", new { type = "email", placeholder = "IT-Recrutement@Link.fr" })
+                </p>
+
+                <p>
+                    Web Site * @Html.TextBox("name", "", new { type = "URL", placeholder = "http://www.IT-Recrutement-Link.com" })
+                </p>
+
+                <p>
+
+                    Phone * @Html.TextBox("Phone")
+                </p>
+
+                <p>
+                  
+                    Country * @Html.DropDownListFor(c => c.Country, Model.);
+                                   
+                </p>
+
+                <p>
+                    <input type="submit" value="Registe"/>
+                </p>
+
+            }
+            <div id="required">
+                <p>
+                    * Required Fields<br />
+                    NOTE: You must activate your account after sign up
+                </p>
+            </div>
+
+        </div>
+
+        <!--END #signup-inner -->
+    </div>
+
+    <!--END #signup-form -->
+    
+

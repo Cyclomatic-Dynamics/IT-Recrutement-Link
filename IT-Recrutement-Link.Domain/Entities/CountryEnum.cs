@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace IT_Recrutement_Link.Domain.Entities
 {
-    public enum CompanySizeEnum
+    public enum CountryEnum
     {
-        very_small ,
-        small,
-        medium,
-        large
+        Tunisia,
+        Kablam,
+        Shiromi
     }
 }
