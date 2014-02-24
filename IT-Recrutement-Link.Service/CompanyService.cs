@@ -28,7 +28,8 @@ namespace IT_Recrutement_Link.Service
         }
         public Company LoginCompany(string email, string password)
         {
-            Company company = unitOfWork.FindOne<Company>(email);
+            Company company = unitOfWork.FindMany<Company>(c => (c.Email == email)).
+                FirstOrDefault<Company>();
             if (HashUtil.SHA1Hash(password).Equals(company.PasswordHash))
             {
                 return company;

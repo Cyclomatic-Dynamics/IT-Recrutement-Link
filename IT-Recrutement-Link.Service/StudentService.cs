@@ -45,7 +45,8 @@ namespace IT_Recrutement_Link.Service
         }
         public Student LoginStudent(string email, string password)
         {
-            Student student = unitOfWork.FindOne<Student>(email);
+            Student student = unitOfWork.FindMany<Student>(s => (s.Email == email)).
+                FirstOrDefault<Student>();
             if (HashUtil.SHA1Hash(password).Equals(student.PasswordHash))
             {
                 return student;

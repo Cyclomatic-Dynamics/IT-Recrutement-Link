@@ -50,6 +50,7 @@
     <Compile Include="Configuration\JobConfiguration.cs" />
     <Compile Include="Configuration\StudentConfiguration.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Infrastructure\EFUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,14 +58,16 @@
       <Project>{44d62338-53d8-4344-9580-4abf1d562fce}</Project>
       <Name>IT-Recrutement-Link.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IT-Recrutement-Link.Service\IT-Recrutement-Link.Service.csproj">
+      <Project>{79aa4151-4cd0-4de9-b321-1cb269df5d60}</Project>
+      <Name>IT-Recrutement-Link.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

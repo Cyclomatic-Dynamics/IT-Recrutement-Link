@@ -50,10 +50,6 @@
     <Compile Include="WrongPasswordException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IT-Recrutement-Link.DataAccess\IT-Recrutement-Link.DataAccess.csproj">
-      <Project>{288a1550-4530-4ba5-a597-cd75f5322827}</Project>
-      <Name>IT-Recrutement-Link.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IT-Recrutement-Link.Domain\IT-Recrutement-Link.Domain.csproj">
       <Project>{44d62338-53d8-4344-9580-4abf1d562fce}</Project>
       <Name>IT-Recrutement-Link.Domain</Name>

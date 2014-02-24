@@ -14,10 +14,7 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
         {
             ToTable("Jobs");
             HasKey(j =>j.Id);
-            Property(j => j.Name).IsRequired();
-            
-            
-            
+            Property(j => j.Name).IsRequired();   
         }
     }
 }

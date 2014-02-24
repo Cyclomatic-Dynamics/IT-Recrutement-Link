@@ -72,6 +72,10 @@
       <Project>{44d62338-53d8-4344-9580-4abf1d562fce}</Project>
       <Name>IT-Recrutement-Link.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IT-Recrutement-Link.Service\IT-Recrutement-Link.Service.csproj">
+      <Project>{79aa4151-4cd0-4de9-b321-1cb269df5d60}</Project>
+      <Name>IT-Recrutement-Link.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
