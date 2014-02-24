@@ -1,0 +1,31 @@
+﻿@model IT_Recrutement_Link.Web.Models.Login
+@{
+    ViewBag.Title = "Authentification";
+}
+
+
+@Html.ValidationSummary(true)
+<br />
+@using (Html.BeginForm(null, null, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    @Html.LabelFor(m => m.UserName)
+   <br />
+    @Html.TextBoxFor(m => m.UserName)
+    
+    @Html.ValidationMessageFor(m => m.UserName)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.Password)
+    <br />
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(m => m.Password)
+    <br />
+    <br />
+    <label>
+        @Html.CheckBoxFor(m => m.RememberMe)
+        @Html.LabelFor(m => m.RememberMe)
+    </label>
+    <br />
+    <br />
+    <input type="submit" value="Log in" />
+}
