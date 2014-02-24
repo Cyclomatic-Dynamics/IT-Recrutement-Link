@@ -11,7 +11,7 @@ namespace IT_Recrutement_Link.Web.Controllers
 {
     public class CompanyController : Controller
     {
-        
+        private readonly JobService jobService;
         [HttpGet]
         public ActionResult AddCompanyForm()
         {
@@ -48,7 +48,15 @@ namespace IT_Recrutement_Link.Web.Controllers
             //var Company = CompanySevice.getCompany(Id);
             return View();
         }
+        public ActionResult SearchJob(Company company)
+        {
+            var jobs = jobService.ViewOwnJobs(company);
+            return View(jobs);
+        }
+        public ActionResult AddJob()
+        {
 
+        }
     }
 
 

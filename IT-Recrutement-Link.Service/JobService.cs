@@ -9,7 +9,7 @@ using IT_Recrutement_Link.Domain.Entities;
 
 namespace IT_Recrutement_Link.Service
 {
-    public class JobService
+    public class JobService : IJobService
     {
         private IUnitOfWork unitOfWork;
         public JobService(IUnitOfWork unit)
@@ -26,10 +26,21 @@ namespace IT_Recrutement_Link.Service
             }
             catch (Exception)
             {
-                throw new EntityNotFoundException<Company>(id);
+                throw new EntityNotFoundException<Job>(id);
             }
         }
-        
+        public IList<Job> ViewJobs(string word)
+        {
+            
+                return unitOfWork.FindMany<Job>(j=>j.Name.Equals(word));
+            
+        }
+        public IList<Job> ViewOwnJobs(Company company1)
+        {
+
+            return unitOfWork.FindMany<Job>(j => j.company.Equals(company1));
+
+        }
         
     }
 }

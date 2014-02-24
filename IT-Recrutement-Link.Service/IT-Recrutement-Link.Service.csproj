@@ -45,6 +45,7 @@
     <Compile Include="EntityNotFoundException.cs" />
     <Compile Include="IBlobStorage.cs" />
     <Compile Include="CompanyService.cs" />
+    <Compile Include="IJobService.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="JobService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
