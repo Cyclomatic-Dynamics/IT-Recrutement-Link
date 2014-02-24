@@ -19,5 +19,21 @@ namespace IT_Recrutement_Link.Web.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public enum Choice
+        {
+            Student,
+            Company,
+            
+        }
+
+        public class ColoursViewModel
+        {
+            public Choice ChosenChoice
+            {
+                get;
+                set;
+            }
+        }
     }
 }

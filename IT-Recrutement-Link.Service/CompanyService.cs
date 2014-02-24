@@ -4,30 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Security.Cryptography;
 using IT_Recrutement_Link.Domain.Entities;
 
 namespace IT_Recrutement_Link.Service
 {
     public class CompanyService
     {
-        private IBlobStorage blobStorage;
         private IUnitOfWork unitOfWork;
-        public CompanyService(IBlobStorage storage, IUnitOfWork unitOfWork)
+        public CompanyService(IUnitOfWork unitOfWork)
         {
-            blobStorage = storage;
             this.unitOfWork = unitOfWork;
-
         }
-        public void AddCompany(Company company, string password, FileStream video,
-            FileStream image, FileStream slide)
+        public void AddCompany(Company company, string password)
         {
-            company.PasswordHash = Hash(password);
-            company.VideoUrl = blobStorage.upLoad(video);
-            company.LogoPictureUrl = blobStorage.upLoad(image);
-            company.SlidesUrl = blobStorage.upLoad(slide);
+            company.PasswordHash = HashUtil.SHA1Hash(password);
             unitOfWork.Add<Company>(company);
             unitOfWork.Commit();
+        }
+        public void ModifyCompany(Company company)
+        {
+            unitOfWork.Update<Company>(company);
+            unitOfWork.Commit();
+        }
+        public Company LoginCompany(string email, string password)
+        {
+            Company company = unitOfWork.FindMany<Company>(c => (c.Email.Equals(email))).
+                FirstOrDefault<Company>();
+            if (company != null)
+            {
+                if (HashUtil.SHA1Hash(password).Equals(company.PasswordHash))
+                {
+                    return company;
+                }
+                else
+                {
+                    throw new WrongCredentialException();
+                }
+            }
+            else
+            {
+                throw new WrongCredentialException();
+            }
         }
         public Company ViewCompany(int id)
         {
@@ -40,16 +57,8 @@ namespace IT_Recrutement_Link.Service
                 throw new EntityNotFoundException<Company>(id);
             }
         }
-        private string Hash(string input)
-        {
-            using (SHA1Managed hasher = new SHA1Managed())
-            {
-                
-                byte[] textData = Encoding.UTF8.GetBytes(input);
-                byte[] hash = hasher.ComputeHash(textData);
-                return BitConverter.ToString(hash).Replace("-", String.Empty).ToLower();
-            }
-        }
+        
+        
         public void AddJob(string jobname, Company company)
         {
             Job job = company.CreateJob(jobname);

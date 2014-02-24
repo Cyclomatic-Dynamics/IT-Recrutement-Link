@@ -1,9 +1,6 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
-using IT_Recrutement_Link.Domain;
-using IT_Recrutement_Link.Service;
-
 
 namespace IT_Recrutement_Link.Web
 {
@@ -11,7 +8,7 @@ namespace IT_Recrutement_Link.Web
   {
     public static IUnityContainer Initialise()
     {
-      var container = BuildUnityContainer();
+        var container = BuildUnityContainer();
 
       DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
@@ -20,22 +17,21 @@ namespace IT_Recrutement_Link.Web
 
     private static IUnityContainer BuildUnityContainer()
     {
-      var container = new UnityContainer();
-
+        var container = new UnityContainer();
+        
       // register all your components with the container here
       // it is NOT necessary to register your controllers
 
       // e.g. container.RegisterType<ITestService, TestService>();    
       RegisterTypes(container);
-      
        
-
       return container;
     }
 
     public static void RegisterTypes(IUnityContainer container)
     {
-    
+        container.RegisterType<IT_Recrutement_Link.Service.IUnitOfWork
+            , IT_Recrutement_Link.DataAccess.Context>();
     }
   }
 }

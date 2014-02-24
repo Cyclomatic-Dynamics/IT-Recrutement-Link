@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+<<<<<<< HEAD
 
+=======
+>>>>>>> be240b5870e585e867674330b100825fe55951be
 namespace IT_Recrutement_Link.Service
 {
     public interface IUnitOfWork

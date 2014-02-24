@@ -16,6 +16,8 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
             ToTable("Companies");
             HasKey(c => c.Id);
             Property(c => c.Name).HasMaxLength(50).IsRequired();
+            Property(c => c.Email).IsRequired();
+            Property(c => c.PasswordHash).IsRequired();
             Property(c => c.VideoUrl).HasMaxLength(100).IsRequired();
             Property(c => c.SlidesUrl).HasMaxLength(100).IsRequired();
             Property(c => c.Address).HasMaxLength(100).IsRequired();

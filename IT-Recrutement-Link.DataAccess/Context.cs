@@ -8,22 +8,22 @@ using System.Data.Entity.Infrastructure;
 using IT_Recrutement_Link.Domain.Entities;
 using IT_Recrutement_Link.DataAccess.Configuration;
 using System.Linq.Expressions;
+using IT_Recrutement_Link.Service;
 namespace IT_Recrutement_Link.DataAccess
 {
-    public class Context : DbContext
+    public class Context : DbContext, IUnitOfWork
     {
+        //private static string connectionString = "Server=tcp:m5v781rgwy.database.windows.net,1433;Database=main-db;User ID=it-rec-link-data@m5v781rgwy;Password=CyclomaticDynamics2;Trusted_Connection=False;Encrypt=True;Connection Timeout=30";
+        private static string connectionString = null;
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Job> Jobs { get; set; }
         public Context()
+            : base(/*connectionString*/)
         {
             Database.SetInitializer<Context>(new ContextInitializer());      
         }
         
-        
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
-        {
-            modelBuilder.Configurations.Add(new StudentConfiguration());
-            modelBuilder.Configurations.Add(new CompanyConfiguration());
-            modelBuilder.Configurations.Add(new JobConfiguration());
-        }
         public void Commit()
         {
             SaveChanges();
@@ -43,7 +43,8 @@ namespace IT_Recrutement_Link.DataAccess
         }
         public T FindById<T>(int id) where T : class
         {
-            return Set<T>().Find(id);
+            return  Set<T>().Find(id);
+            
         }
         public IList<T> FindMany<T>(Expression<Func<T, bool>> where) where T : class
         {
@@ -53,6 +54,7 @@ namespace IT_Recrutement_Link.DataAccess
         {
             return Set<T>().ToList<T>();
         }
+       
         
        
         private class ContextInitializer : DropCreateDatabaseAlways<Context> { }
