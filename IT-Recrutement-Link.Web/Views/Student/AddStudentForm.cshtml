@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>AddStudentForm</h2>
+
+<div id="signup-form">
+
+    <!--BEGIN #subscribe-inner -->
+    <div id="signup-inner">
+
+        <div class="clearfix" id="header">
+
+            <img id="signup-icon" src="./images/signup.png" alt="" />
+
+            <h1>Sign up</h1>
+
+
+        </div>
+        <p>Please complete the fields below, ensuring you use a valid email address as you will be sent a validation code which you will need the first time you login to the site.</p>
+
+        @using (Html.BeginForm(new { id = "send" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <p>
+                Student name *  @Html.TextBoxFor(s => s.Name)
+                                @Html.ValidationMessageFor(s => s.Name)
+
+            </p>
+
+            <p>
+                password * @Html.Password("passwd")
+
+            </p>
+            <p>
+                Verify password * @Html.Password("passwd")
+            </p>
+
+            <p>
+
+                Email * @Html.TextBox("name", "", new { type = "email", placeholder = "IT-Recrutement@Link.fr" })
+            </p>
+
+            
+
+            <p>
+
+                Phone * @Html.TextBox("Phone")
+            </p>
+
+           
+
+            <p>
+                <input type="submit" value="Register" />
+            </p>
+
+            }
+        <div id="required">
+            <p>
+                * Required Fields<br />
+                NOTE: You must activate your account after sign up
+            </p>
+        </div>
+
+    </div>
+
+    <!--END #signup-inner -->
+</div>
+
+<!--END #signup-form -->
