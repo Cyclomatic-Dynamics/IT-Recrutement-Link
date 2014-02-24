@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IT_Recrutement_Link.Service
 {
-    public class WrongPasswordException :Exception
+    public class WrongCredentialException :Exception
     {
     }
 }
