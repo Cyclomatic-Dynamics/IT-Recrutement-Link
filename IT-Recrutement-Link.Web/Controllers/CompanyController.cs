@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using IT_Recrutement_Link.Web;
 using IT_Recrutement_Link.Service;
 using IT_Recrutement_Link.Domain.Entities;
-
+using System.Globalization;
 namespace IT_Recrutement_Link.Web.Controllers
 {
     public class CompanyController : Controller
@@ -20,7 +20,12 @@ namespace IT_Recrutement_Link.Web.Controllers
         [HttpGet]
         public ActionResult AddCompanyForm()
         {
-            
+            ViewBag.country = from p in CultureInfo.GetCultures(CultureTypes.AllCultures & ~CultureTypes.NeutralCultures).OrderBy(c => c.Name)
+                              select new SelectListItem
+                              {
+                                  Text = p.EnglishName,
+                                  Value = p.DisplayName
+                              };
             
             return View(new Company());
         }
@@ -61,7 +66,7 @@ namespace IT_Recrutement_Link.Web.Controllers
         }
         public ActionResult AddJob()
         {
-
+            return View();
         }
         public static string id { get; set; }
 
