@@ -17,9 +17,9 @@ namespace IT_Recrutement_Link.Domain.Entities
         [MaxLength(50)]
         [Required(ErrorMessage="Name Required")]
         public string Name { get; set;}
-        [Required]
+        [Required(ErrorMessage = "Email Required")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "pass Required")]
         public string PasswordHash { get; set; }
         [Required]
         public string VideoUrl { get; set; }
@@ -27,13 +27,15 @@ namespace IT_Recrutement_Link.Domain.Entities
         public string SlidesUrl { get; set; }
         [Required]
         public string LogoPictureUrl { get; set; }
-        [Required]
+        [Required(ErrorMessage = "URL Required")]
+        public string URL { get; set; }
+       
         public ActivitySectorEnum ActivitySectorName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Country Required")]
         public String Country { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Address Required")]
         public String Address { get; set; }
-        [Required]
+        
         public CompanySizeEnum CompanySize { get; set; }
         [Required]
         public DateTime? CreationDate { get; set; }
