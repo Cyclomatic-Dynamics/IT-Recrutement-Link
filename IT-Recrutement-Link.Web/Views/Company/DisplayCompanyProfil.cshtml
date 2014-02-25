@@ -1,19 +1,22 @@
-﻿
+﻿@using IT_Recrutement_Link.Web.Models
 @{
     ViewBag.Title = "DisplayCompanyProfil";
 }
 
 <h2>Display Company Profil</h2>
-<fieldset>
+
     <legend>Company</legend>
        <div class="display-label">
             Hello @ViewBag.Name !
            
+           
        </div>
     <div class="display-label">
-        @Html.DisplayName("name")
-    </div>
-</fieldset>
+        @*@html.DisplayFor(model => model.ImageURL)*@
+        <img src="@ViewBag.url" alt="aaa" />
+        
+     </div>
+
 
    
 
