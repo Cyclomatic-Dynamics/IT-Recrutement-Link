@@ -1,0 +1,54 @@
+﻿@model IT_Recrutement_Link.Domain.Entities.Student
+@using System.Web.Mvc.Razor;
+@using System.Web.Mvc.Html;
+
+
+
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<h2>AddStudent</h2>
+
+    <div>
+        @using (Html.BeginForm())
+        { 
+        <label for="Name">Name:</label>
+        <br />
+        @Html.TextBoxFor(s => s.Name)
+        <br /><br />
+            
+        <label for="LastName">LastName:</label>
+        <br />
+        @Html.TextBoxFor(s => s.LastName)
+        <br /><br />
+        
+        <label for="Email">Email:</label>
+        <br />
+        @Html.TextBoxFor(s => s.Email)
+        <br /><br />
+        
+        <label for="Password">Password:</label>
+        <br />
+        @Html.PasswordFor(s => s.PasswordHash)
+        <br /><br />
+            
+            
+        <label for="DateNaissance">DateNaissance:</label>
+        <br />
+       @Html.TextBoxFor(s => s.DateNaissance)
+        <br /><br />
+       
+        <label for="university">University:</label>
+        <br />
+        @Html.TextBoxFor(s => s.University)
+        <br /><br />
+            
+        <label for="Formation">Formation</label>
+        <br />
+        @Html.TextBoxFor(s => s.Formation)
+        <br /><br />
+        <input type="submit" value="Log in" />
+        } 
+    </div>
+

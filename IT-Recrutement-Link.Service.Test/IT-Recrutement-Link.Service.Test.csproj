@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="CompanyServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

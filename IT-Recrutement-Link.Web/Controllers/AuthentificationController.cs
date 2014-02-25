@@ -35,40 +35,64 @@ namespace IT_Recrutement_Link.Web.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult Login(Login model, string returnUrl = "")
         {
             if (ModelState.IsValid)
             {
+                NameValueCollection nvc = Request.Form;
                 try
                 {
-                    NameValueCollection nvc = Request.Form;
-                    Company company = companyService.LoginCompany(nvc["login"], nvc["password"]);
-                    HttpCookie myCookie = new HttpCookie("myCookie"); 
-                    myCookie.Values.Add("id", company.Id.ToString());
-                    myCookie.Expires = DateTime.Now.AddDays(12);
-                    Response.Cookies.Add(myCookie);
-                    return View("DisplayCompany");
+                    if (nvc["ChosenChoice"].Equals("Student"))
+                    {
+                        loginStudent(nvc);
+                        return View("DisplayStudent");
+                    }
+                    else
+                    {
+                        loginCompany(nvc);
+                        return RedirectToAction("DisplayCompanyProfil", "Company");/*View("DisplayCompanyProfil", "Company");*/
+                    }
                 }
+
                 catch (WrongCredentialException)
                 {
-                    ViewBag.WrongPasswordMessage = "Wrong Password !!!";
-                    return View(model);                
+                    ViewBag.WrongPasswordMessage = "Wrong Password!!!!!!!";
+                    return View(model);
                 }
             }
             else
             {
                 return View(model);
             }
-            
         }
-
+        private void loginStudent(NameValueCollection nvc)
+        {
+            Student student = studentService.LoginStudent(nvc["UserName"], nvc["Password"]);
+           retainSessionState(student.Id.ToString());
+        }
+        private void loginCompany(NameValueCollection nvc)
+        {
+            Company company = companyService.LoginCompany(nvc["UserName"], nvc["Password"]);
+            retainSessionState(company.Id.ToString());
+        }
+        private void retainSessionState(string id)
+        {
+            Session["id"] = id;
+        }
         [HttpPost]
         [AllowAnonymous]
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "Account", null);
+        }
+    }
+    public class TestController
+    {
+        public ActionResult SelectChoice()
+        {
+            return SelectChoice();
         }
     }
 }
