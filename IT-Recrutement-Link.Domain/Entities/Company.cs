@@ -27,11 +27,12 @@ namespace IT_Recrutement_Link.Domain.Entities
         public string SlidesUrl { get; set; }
         [Required]
         public string LogoPictureUrl { get; set; }
-        
+        [Required]
+        public string URL { get; set; }
         public ActivitySectorEnum ActivitySectorName { get; set; }
         [Required]
-        public String Address { get; set; }
-        
+        public string Address { get; set; }
+        public string Country { get; set; }
         public CompanySizeEnum CompanySize { get; set; }
         [Required]
         public DateTime? CreationDate { get; set; }

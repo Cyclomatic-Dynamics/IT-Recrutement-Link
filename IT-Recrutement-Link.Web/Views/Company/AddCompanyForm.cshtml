@@ -23,7 +23,7 @@
             
             <p>Please complete the fields below, ensuring you use a valid email address as you will be sent a validation code which you will need the first time you login to the site.</p>
 
-            @using (Html.BeginForm(new { id = "send" }))
+            @using (Html.BeginForm(new { id = "send" , enctype = "multipart/form-data"}))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
@@ -62,14 +62,6 @@
                    Country *  @Html.TextBoxFor(c => c.Country)
                             @Html.ValidationMessageFor(c => c.Country)
                 </p>
-                <p>
-                    Ativitys * @Html.TextBoxFor(c => c.ActivitySectorName)
-                               @Html.ValidationMessageFor(c => c.ActivitySectorName)
-                </p>
-                <p>
-                    Size * @Html.TextBoxFor(c => c.CompanySize)
-                            @Html.ValidationMessageFor(c => c.CompanySize)
-                </p>
               <p>
                 Creation Date *  @Html.TextBoxFor(c => c.CreationDate, Html.Encode(String.Format("{0:dd/mm/yy}", DateTime.Now)), new { @class = "ui-datepicker" })
                     @Html.ValidationMessageFor(c => c.CreationDate)            
@@ -77,8 +69,8 @@
                 
                 <p>
                     
-                   Upload your picture @Html.TextBoxFor(c => c.LogoPictureUrl, new { type = "file" })
-                    @Html.ValidationMessageFor(c => c.LogoPictureUrl)
+                   Upload your picture <input type="file" name="file"/>
+                    
                     
                 </p>
 

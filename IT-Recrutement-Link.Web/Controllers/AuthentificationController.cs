@@ -52,7 +52,7 @@ namespace IT_Recrutement_Link.Web.Controllers
                     {
                         loginCompany(nvc);
                         return RedirectToAction("DisplayCompanyProfil", "Company");
-                        /*View("DisplayCompanyProfil", "Company");*/
+                        
                     }
                 }
 
