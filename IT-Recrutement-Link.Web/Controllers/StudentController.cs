@@ -12,11 +12,22 @@ namespace IT_Recrutement_Link.Web.Controllers
 {
     public class StudentController : Controller
     {
+        private readonly JobService jobService;
+        public StudentController(JobService jobService)
+        {
+            this.jobService = jobService;
+        }
         //
         // GET: /Student/
         public ActionResult AddStudent()
         {
             return View("AddStudentForm");
+        }
+        [HttpPost]
+        public ActionResult SearchJob(string searchString)
+        {
+            var jobs = jobService.ViewJobs(searchString);
+            return View(jobs);
         }
         [HttpPost]
         public ActionResult AddStudent(Student student)

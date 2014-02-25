@@ -243,6 +243,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="App.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -288,6 +291,9 @@
     <Content Include="Views\Company\DisplayCompanyProfil.cshtml" />
     <Content Include="Views\Authentification\login.cshtml" />
     <Content Include="Views\Student\AddStudentForm.cshtml" />
+    <Content Include="Views\Student\EditStudentProfil.cshtml" />
+    <Content Include="Views\Student\DisplayStudentProfil.cshtml" />
+    <Content Include="Views\Student\SearchJob.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,6 +314,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IT-Recrutement-Link.DataAccess\IT-Recrutement-Link.DataAccess.csproj">
+      <Project>{288a1550-4530-4ba5-a597-cd75f5322827}</Project>
+      <Name>IT-Recrutement-Link.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IT-Recrutement-Link.Domain\IT-Recrutement-Link.Domain.csproj">
       <Project>{44d62338-53d8-4344-9580-4abf1d562fce}</Project>
       <Name>IT-Recrutement-Link.Domain</Name>
