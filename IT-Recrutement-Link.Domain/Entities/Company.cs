@@ -17,9 +17,9 @@ namespace IT_Recrutement_Link.Domain.Entities
         [MaxLength(50)]
         [Required(ErrorMessage="Name Required")]
         public string Name { get; set;}
-        [Required(ErrorMessage = "Email Required")]
+        [Required]
         public string Email { get; set; }
-        [Required(ErrorMessage = "pass Required")]
+        [Required]
         public string PasswordHash { get; set; }
         [Required]
         public string VideoUrl { get; set; }
@@ -27,13 +27,9 @@ namespace IT_Recrutement_Link.Domain.Entities
         public string SlidesUrl { get; set; }
         [Required]
         public string LogoPictureUrl { get; set; }
-        [Required(ErrorMessage = "URL Required")]
-        public string URL { get; set; }
-       
+        
         public ActivitySectorEnum ActivitySectorName { get; set; }
-        [Required(ErrorMessage = "Country Required")]
-        public String Country { get; set; }
-        [Required(ErrorMessage = "Address Required")]
+        [Required]
         public String Address { get; set; }
         
         public CompanySizeEnum CompanySize { get; set; }
@@ -44,9 +40,7 @@ namespace IT_Recrutement_Link.Domain.Entities
         [Required]
         public virtual IList<string> Keywords { get; set; }
         public Company()
-        {
-
-        }
+        {}
         public Company(string Name)
         {
             this.Name = Name;

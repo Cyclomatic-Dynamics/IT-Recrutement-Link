@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Collections.Specialized;
 using IT_Recrutement_Link.Web;
 using IT_Recrutement_Link.Service;
 using IT_Recrutement_Link.Domain.Entities;
-using System.Globalization;
+
 namespace IT_Recrutement_Link.Web.Controllers
 {
     public class CompanyController : Controller
@@ -19,22 +20,18 @@ namespace IT_Recrutement_Link.Web.Controllers
         private readonly JobService jobService;
         [HttpGet]
         public ActionResult AddCompanyForm()
-        {
-            ViewBag.country = from p in CultureInfo.GetCultures(CultureTypes.AllCultures & ~CultureTypes.NeutralCultures).OrderBy(c => c.Name)
-                              select new SelectListItem
-                              {
-                                  Text = p.EnglishName,
-                                  Value = p.DisplayName
-                              };
-            
+        {   
             return View(new Company());
         }
         [HttpPost]
-        public ActionResult AddCompanyForm(Company company)
+        public ActionResult AddCompanyForm(Company company, HttpPostedFileBase file)
         {
+            NameValueCollection postArgs = Request.Form;
             if (!ModelState.IsValid)
             {
-                
+                BlobStorageService storage = new BlobStorageService();
+                company.LogoPictureUrl = storage.Upload(file);
+                companyService.AddCompany(company, company.PasswordHash);
                 return View(company);
             }
             return RedirectToAction("DisplayCompanyProfil");
@@ -42,7 +39,7 @@ namespace IT_Recrutement_Link.Web.Controllers
         
         //[HttpPost]
         /*
-        public ActionResult AddCompanyForm()
+        public ActionResult AddCompanyForm()gh
         {
             ViewBag.Message = "The category doesn't exist";
             return View();
@@ -68,9 +65,7 @@ namespace IT_Recrutement_Link.Web.Controllers
         {
             return View();
         }
-        public static string id { get; set; }
-
-        public static string passwordhash { get; set; }
+        
     }
 
 
