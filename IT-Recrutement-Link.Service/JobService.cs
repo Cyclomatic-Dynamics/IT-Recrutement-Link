@@ -39,8 +39,8 @@ namespace IT_Recrutement_Link.Service
         {
 
             return unitOfWork.FindMany<Job>(j => j.company.Equals(company1));
-        }
 
+        }
 
         public void RemoveJob(int id)
         {
@@ -51,6 +51,7 @@ namespace IT_Recrutement_Link.Service
             unitOfWork.Remove<Job>(job);
             unitOfWork.Commit();
         }
+        }
         
     }
-}
+

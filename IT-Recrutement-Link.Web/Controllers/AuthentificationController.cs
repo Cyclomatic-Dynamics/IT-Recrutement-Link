@@ -51,7 +51,8 @@ namespace IT_Recrutement_Link.Web.Controllers
                     else
                     {
                         loginCompany(nvc);
-                        return RedirectToAction("DisplayCompanyProfil", "Company");/*View("DisplayCompanyProfil", "Company");*/
+                        return RedirectToAction("DisplayCompanyProfil", "Company");
+                        /*View("DisplayCompanyProfil", "Company");*/
                     }
                 }
 

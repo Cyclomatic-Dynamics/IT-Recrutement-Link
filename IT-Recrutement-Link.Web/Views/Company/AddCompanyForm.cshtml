@@ -1,10 +1,10 @@
 ﻿@model IT_Recrutement_Link.Domain.Entities.Company
+           
 
 @{
     
     ViewBag.Title = "Register Your Company";
 }
-
     <!--BEGIN #signup-form -->
     <div id="signup-form">
 
@@ -15,10 +15,12 @@
 
                 <img id="signup-icon" src="./images/signup.png" alt="" />
 
+
+
                 <h1>Sign up your Company</h1>
-
-
             </div>
+
+            
             <p>Please complete the fields below, ensuring you use a valid email address as you will be sent a validation code which you will need the first time you login to the site.</p>
 
             @using (Html.BeginForm(new { id = "send" }))
@@ -32,32 +34,56 @@
                 </p>
 
                 <p>
-                    password * @Html.Password("passwd")
-
+                    password * @Html.PasswordFor(c => c.PasswordHash)
+                    @Html.ValidationMessageFor(c => c.PasswordHash)
                 </p>
                 <p>
-                    Verify password * @Html.Password("passwd")
-                </p>
-
-                <p>
-
-                  Email * @Html.TextBox("name", "", new { type = "email", placeholder = "IT-Recrutement@Link.fr" })
-                </p>
-
-                <p>
-                    Web Site * @Html.TextBox("name", "", new { type = "URL", placeholder = "http://www.IT-Recrutement-Link.com" })
+                    Verify password * @Html.PasswordFor(c => c.PasswordHash)
+                    @Html.ValidationMessageFor(c => c.PasswordHash)
                 </p>
 
                 <p>
 
-                    Phone * @Html.TextBox("Phone")
-                </p>
+                  Email * @Html.TextBoxFor(c => c.Email, "", new { type = "email", placeholder = "IT-Recrutement@Link.fr" })
+                          @Html.ValidationMessageFor(c => c.Email)
+                  </p>
 
-                <p>                      
+                <p>
+                    Web Site * @Html.TextBoxFor(c => c.URL, "", new { type = "URL", placeholder = "http://www.IT-Recrutement-Link.com" })
+                    @Html.ValidationMessageFor(c => c.URL)
+                 </p>
+
+                <p>
+
+                   Address * @Html.TextBoxFor(c => c.Address)
+                    @Html.ValidationMessageFor(c => c.Address)
+                </p>
+                <p>
+                   Country *  @Html.TextBoxFor(c => c.Country)
+                            @Html.ValidationMessageFor(c => c.Country)
+                </p>
+                <p>
+                    Ativitys * @Html.TextBoxFor(c => c.ActivitySectorName)
+                               @Html.ValidationMessageFor(c => c.ActivitySectorName)
+                </p>
+                <p>
+                    Size * @Html.TextBoxFor(c => c.CompanySize)
+                            @Html.ValidationMessageFor(c => c.CompanySize)
+                </p>
+              <p>
+                Creation Date *  @Html.TextBoxFor(c => c.CreationDate, Html.Encode(String.Format("{0:dd/mm/yy}", DateTime.Now)), new { @class = "ui-datepicker" })
+                    @Html.ValidationMessageFor(c => c.CreationDate)            
+              </p>
+                
+                <p>
+                    
+                   Upload your picture @Html.TextBoxFor(c => c.LogoPictureUrl, new { type = "file" })
+                    @Html.ValidationMessageFor(c => c.LogoPictureUrl)
+                    
                 </p>
 
                 <p>
-                    <input type="submit" value="Registe"/>
+                    <input type="submit" value="Register"/>
                 </p>
 
             }
