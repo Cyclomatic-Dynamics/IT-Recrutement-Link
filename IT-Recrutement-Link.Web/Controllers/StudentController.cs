@@ -12,41 +12,16 @@ namespace IT_Recrutement_Link.Web.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly IJobService jobService;
-        public StudentController(IJobService jobService)
+        private readonly JobService jobService;
+        public StudentController(JobService jobService)
         {
-            this.jobService= jobService;
+            this.jobService = jobService;
         }
         //
         // GET: /Student/
-        public ActionResult Index()
+        public ActionResult AddStudent()
         {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult AddStudentForm()
-        {
-            return View(new Student());
-        }
-        [HttpPost]
-        public ActionResult AddStudentForm(Student student)
-        {
-            if (!ModelState.IsValid)
-            {
-
-                return View(student);
-            }
-            return RedirectToAction("DisplayStudentProfil");
-        }
-        public ActionResult EditStudentProfil()
-        {
-
-            return View();
-        }
-        public ActionResult DisplayStudentProfil()
-        {
-
-            return View();
+            return View("AddStudentForm");
         }
         [HttpPost]
         public ActionResult SearchJob(string searchString)
@@ -54,5 +29,23 @@ namespace IT_Recrutement_Link.Web.Controllers
             var jobs = jobService.ViewJobs(searchString);
             return View(jobs);
         }
+        [HttpPost]
+        public ActionResult AddStudent(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                //
+               // string url = CloudBlobStorage.upload(HttpFileStream);
+                // student.Videourl = url;
+                //service.Add(student, password);
+                return View(student);
+            }
+            else {
+                return View(student);
+            }
+        }
+
+
+        
 	}
 }
