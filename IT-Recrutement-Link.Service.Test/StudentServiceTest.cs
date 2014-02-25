@@ -10,7 +10,7 @@ namespace IT_Recrutement_Link.Service.Test
     [TestClass]
     public class StudentServiceTest
     {
-        [TestMethod]
+        /*[TestMethod]
         public void ShouldAddStudent()
         {
             Mock<IBlobStorage> storage = new Mock<IBlobStorage>();
@@ -60,6 +60,6 @@ namespace IT_Recrutement_Link.Service.Test
             image.Dispose();
             slides.Dispose();
 
-        }
+        }*/
     }
 }

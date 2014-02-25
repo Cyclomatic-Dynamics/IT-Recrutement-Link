@@ -28,7 +28,7 @@ namespace IT_Recrutement_Link.Service
                 throw new EntityNotFoundException<Job>(id);
             }
         }
-<<<<<<< HEAD
+
         public IList<Job> ViewJobs(string word)
         {
             
@@ -39,8 +39,8 @@ namespace IT_Recrutement_Link.Service
         {
 
             return unitOfWork.FindMany<Job>(j => j.company.Equals(company1));
+        }
 
-=======
 
         public void RemoveJob(int id)
         {
@@ -50,7 +50,6 @@ namespace IT_Recrutement_Link.Service
         {
             unitOfWork.Remove<Job>(job);
             unitOfWork.Commit();
->>>>>>> be240b5870e585e867674330b100825fe55951be
         }
         
     }

@@ -35,13 +35,13 @@ namespace IT_Recrutement_Link.Web.Controllers
             if (ModelState.IsValid)
             {
                 //
-                string url = CloudBlobStorage.ipload(HttpFileStream)
+               // string url = CloudBlobStorage.upload(HttpFileStream);
                 // student.Videourl = url;
                 //service.Add(student, password);
-                //return RedirectToAction(viewaction)
+                return View(student);
             }
             else {
-                return View(Model);
+                return View(student);
             }
         }
 
