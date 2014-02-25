@@ -50,9 +50,9 @@ namespace IT_Recrutement_Link.Web.Controllers
                     Response.Cookies.Add(myCookie);
                     return View("DisplayCompany");
                 }
-                catch (WrongCredentialException e)
+                catch (WrongCredentialException)
                 {
-                    ViewBag.WrongPasswordMessage = "Wrong Password";
+                    ViewBag.WrongPasswordMessage = "Wrong Password !!!";
                     return View(model);                
                 }
             }
