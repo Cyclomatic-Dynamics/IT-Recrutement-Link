@@ -4,6 +4,9 @@
     <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Blob" value="DefaultEndpointsProtocol=https;AccountName=itreclink;AccountKey=n/4EDqWdQv+0mf9atqBUCW0lrL/YufkY2OM46gx5PsDIlNcXOK5nRxWBaywWM5sFUWPkN5b/DVaHmvg98NiDvQ==" />
     </ConfigurationSettings>
+    <Certificates>
+    </Certificates>
   </Role>
 </ServiceConfiguration>

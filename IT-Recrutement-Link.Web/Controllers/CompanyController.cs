@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Collections.Specialized;
 using IT_Recrutement_Link.Web;
 using IT_Recrutement_Link.Service;
 using IT_Recrutement_Link.Domain.Entities;
@@ -19,17 +20,18 @@ namespace IT_Recrutement_Link.Web.Controllers
         private readonly JobService jobService;
         [HttpGet]
         public ActionResult AddCompanyForm()
-        {
-               
-            
+        {   
             return View(new Company());
         }
         [HttpPost]
-        public ActionResult AddCompanyForm(Company company)
+        public ActionResult AddCompanyForm(Company company, HttpPostedFileBase file)
         {
+            NameValueCollection postArgs = Request.Form;
             if (!ModelState.IsValid)
             {
-                
+                BlobStorageService storage = new BlobStorageService();
+                company.LogoPictureUrl = storage.Upload(file);
+                companyService.AddCompany(company, company.PasswordHash);
                 return View(company);
             }
             return RedirectToAction("DisplayCompanyProfil");

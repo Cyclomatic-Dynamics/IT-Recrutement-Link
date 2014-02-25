@@ -20,7 +20,7 @@ namespace IT_Recrutement_Link.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
+            GlobalConfiguration.Configuration.EnsureInitialized();        
             Bootstrapper.Initialise();
 
         }
