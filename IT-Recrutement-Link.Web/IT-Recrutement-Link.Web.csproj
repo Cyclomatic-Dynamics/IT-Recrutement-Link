@@ -214,6 +214,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -286,6 +287,7 @@
     <Content Include="Views\Company\EditCompanyProfil.cshtml" />
     <Content Include="Views\Company\DisplayCompanyProfil.cshtml" />
     <Content Include="Views\Authentification\login.cshtml" />
+    <Content Include="Views\Student\AddStudentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

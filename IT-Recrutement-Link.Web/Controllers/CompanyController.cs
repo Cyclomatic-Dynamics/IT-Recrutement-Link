@@ -17,7 +17,7 @@ namespace IT_Recrutement_Link.Web.Controllers
         {
             
             
-            return View(new Company());
+            return View(new Company()/*"AddCompanyForm"*/);
         }
         [HttpPost]
         public ActionResult AddCompanyForm(Company company)
@@ -32,7 +32,7 @@ namespace IT_Recrutement_Link.Web.Controllers
         
         //[HttpPost]
         /*
-        public ActionResult AddCompanyForm()
+        public ActionResult AddCompanyForm()gh
         {
             ViewBag.Message = "The category doesn't exist";
             return View();
