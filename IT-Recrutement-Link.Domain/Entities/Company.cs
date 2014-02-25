@@ -30,6 +30,8 @@ namespace IT_Recrutement_Link.Domain.Entities
         [Required]
         public ActivitySectorEnum ActivitySectorName { get; set; }
         [Required]
+        public String Country { get; set; }
+        [Required]
         public String Address { get; set; }
         [Required]
         public CompanySizeEnum CompanySize { get; set; }

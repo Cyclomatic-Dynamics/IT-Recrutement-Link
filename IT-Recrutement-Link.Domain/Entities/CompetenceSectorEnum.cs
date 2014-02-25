@@ -16,3 +16,4 @@ namespace IT_Recrutement_Link.Domain.Entities
 >>>>>>> be240b5870e585e867674330b100825fe55951be
     }
 }
+

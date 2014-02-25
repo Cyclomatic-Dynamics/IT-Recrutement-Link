@@ -62,7 +62,7 @@ namespace IT_Recrutement_Link.Web.Controllers
         public ActionResult AddJob()
         {
 
-
+        }
         public static string id { get; set; }
 
         public static string passwordhash { get; set; }
