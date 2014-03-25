@@ -1,0 +1,69 @@
+﻿@helper DatePicker(string name, string value)
+{
+    <input type="text" size="10" value="@value" id="@name" name="@name" />
+    <script type="text/javascript">
+        $(function () {
+            $("#@name").datepicker();
+        });
+    </script>
+}
+
+@helper DuplicableContainer(string name, string title, System.Web.Mvc.MvcHtmlString rawHtml)
+{
+    <h3>@title</h3>
+    <div id="@(name)-Container" style="border-width : 3px;border-style:solid">
+        <div id="@(name)-Tabs">
+            <ul>
+                <li id="@(name)-li-1"><a href="#@(name)-1">1</a></li>
+            </ul>
+            <div id="@(name)-1">
+                @rawHtml
+                <button id="@(name)-remove-1">Remove</button>
+            </div>
+        </div>
+        <button id="@(name)-Add">Add One</button>
+        <script type="text/javascript">
+            function extractNumberAtEndOfId(htmlId) {
+                return htmlId.match(/[0-9]+$/gm);
+               }
+    function removeTabPage(tabNum) {
+        var liId = "@(name)-li-" + tabNum;
+        var divId = "@(name)-" + tabNum;
+        $("#" + liId).remove();
+        $("#" + divId).remove();
+    }
+    function tabTitleId(number) {
+        return "@(name)-li-" + number;
+    }
+    function tabContentId(number) {
+        return "@(name)-" + number;
+    }
+    function tabRemoveButtonId(number) {
+        return "@(name)-remove-" + number;
+    }
+    var @(name)_tabsCount = 1;
+            $("#@(name)-Tabs").tabs();
+            
+    $("#@(name)-remove-1").click(function (event) {
+        var tabNum = extractNumberAtEndOfId(event.currentTarget.id);
+        removeTabPage(tabNum);
+        return false;
+    });
+    $("#@(name)-Add").click(
+     function (event) {
+         @(name)_tabsCount += 1;
+         $('#@(name)-Tabs ul').
+            append('<li id="' + tabTitleId(@(name)_tabsCount) + '"><a href="#' + tabContentId(@(name)_tabsCount) + '">' + @(name)_tabsCount + '<a></li>');
+         $('#@(name)-Tabs').append('<div id="' + tabContentId(@(name)_tabsCount) + '">@rawHtml<button id="' + tabRemoveButtonId(@(name)_tabsCount) + '">Remove</button></div>');
+         $("#" + tabRemoveButtonId(@(name)_tabsCount)).click(function (event) {
+                     var tabNum = extractNumberAtEndOfId(event.currentTarget.id);
+                     removeTabPage(tabNum);
+                     return false;
+                 });
+                 $("#@(name)-Tabs").tabs("refresh");
+         return false;
+     }
+);
+        </script>
+    </div>
+}

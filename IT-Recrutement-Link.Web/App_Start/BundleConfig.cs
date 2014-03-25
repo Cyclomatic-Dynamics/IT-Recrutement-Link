@@ -26,6 +26,11 @@ namespace IT_Recrutement_Link.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/jQueryUI").Include(
+                      "~/Content/themes/base/minified/jquery-ui.min.css",
+                      "~/Content/themes/base/minified/jquery.ui.datepicker.min.css"));
+            bundles.Add(new ScriptBundle("~/Scripts/jQueryUI")
+                .Include("~/Scripts/jquery-ui-1.10.4.min.js"));
         }
     }
 }

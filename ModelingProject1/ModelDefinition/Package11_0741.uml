@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="1ff9d0be-9160-4a2f-9658-22b74d75cf49"
+  name="Service"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="0599455d-7ef6-431c-aa77-927dd582be91"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DIT_Recrutement_Link.Service"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="898faee9-152e-4a6f-8566-a0a9d2e9dbe7"
+        name="IUnitOfWork"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="3a806b1e-ea78-42bc-9ee0-86b168c50468"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.Service%2Fbin%2FDebug%2FIT-Recrutement-Link.Service.dll Namespace%3DIT_Recrutement_Link.Service Type%3DIUnitOfWork"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9d945806-639b-4188-ba7b-b063a421c7cd"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="739fbba8-4116-4f7b-88dd-6b7e6f15e176">
+                <propertyInstance
+                  Id="78e7ba8d-f0e8-44d6-8ad0-907f4c31bcd7"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="65fdb9d6-5c59-4b04-9296-6d37df5d064d">
+                <propertyInstance
+                  Id="dceae0f6-be8c-44f5-a522-89fae284bd6e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e5617ad2-758d-4a3b-b756-a88cf1412174">
+                <propertyInstance
+                  Id="36b3cfb7-c761-4156-905c-917be1763ef1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1c4dc1ee-98cd-4992-9004-6d3f31be0c22">
+                <propertyInstance
+                  Id="368672aa-0a30-4282-983d-c7dfeab73996"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

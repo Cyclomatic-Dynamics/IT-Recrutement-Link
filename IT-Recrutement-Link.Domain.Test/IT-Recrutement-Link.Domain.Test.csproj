@@ -53,16 +53,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="StudentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CompanyTest.cs" />
-    <Compile Include="JobTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IT-Recrutement-Link.DataAccess.Test\IT-Recrutement-Link.DataAccess.Test.csproj">
-      <Project>{f47bfde2-5b9a-4833-b4af-0450777a4cf6}</Project>
-      <Name>IT-Recrutement-Link.DataAccess.Test</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IT-Recrutement-Link.Domain\IT-Recrutement-Link.Domain.csproj">
       <Project>{44d62338-53d8-4344-9580-4abf1d562fce}</Project>
       <Name>IT-Recrutement-Link.Domain</Name>

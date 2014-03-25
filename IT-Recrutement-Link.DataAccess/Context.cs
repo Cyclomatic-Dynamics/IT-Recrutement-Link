@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using IT_Recrutement_Link.Domain.Entities;
-using IT_Recrutement_Link.DataAccess.Configuration;
+using IT_Recrutement_Link.Domain.Domain;
+
 using System.Linq.Expressions;
 using IT_Recrutement_Link.Service;
 namespace IT_Recrutement_Link.DataAccess
@@ -14,12 +14,13 @@ namespace IT_Recrutement_Link.DataAccess
     public class Context : DbContext, IUnitOfWork
     {
         private static string connectionString = "Server=tcp:m5v781rgwy.database.windows.net,1433;Database=main-db;User ID=it-rec-link-data@m5v781rgwy;Password=CyclomaticDynamics2;Trusted_Connection=False;Encrypt=True;Connection Timeout=30";
+        private static string connectionStringTest = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\Chedy\\Desktop\\festus.mdf;Integrated Security=True;Connect Timeout=30";
         //private static string connectionString = null;
+        public DbSet<User> Users { get; set; }
         public DbSet<Student> Students { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Job> Jobs { get; set; }
+        
         public Context()
-            : base(connectionString)
+            : base(connectionStringTest)
         {
             Database.SetInitializer<Context>(new ContextInitializer());      
         }
@@ -57,7 +58,7 @@ namespace IT_Recrutement_Link.DataAccess
        
         
        
-        private class ContextInitializer : CreateDatabaseIfNotExists<Context> { }
+        private class ContextInitializer : DropCreateDatabaseAlways<Context> { }
         
     }
 }

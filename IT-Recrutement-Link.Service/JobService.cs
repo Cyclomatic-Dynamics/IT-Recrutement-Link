@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using IT_Recrutement_Link.Domain.Entities;
+using IT_Recrutement_Link.Domain.Domain;
 
 
 namespace IT_Recrutement_Link.Service
 {
-    public class JobService : IJobService
+    public class JobService 
     {
         private IUnitOfWork unitOfWork;
         public JobService(IUnitOfWork unit)

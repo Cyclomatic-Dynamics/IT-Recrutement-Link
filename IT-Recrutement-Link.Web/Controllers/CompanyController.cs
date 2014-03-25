@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Collections.Specialized;
 using IT_Recrutement_Link.Web;
 using IT_Recrutement_Link.Service;
-using IT_Recrutement_Link.Domain.Entities;
+using IT_Recrutement_Link.Domain.Domain;
 
 namespace IT_Recrutement_Link.Web.Controllers
 {

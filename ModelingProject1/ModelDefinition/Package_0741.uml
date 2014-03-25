@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="05e9ebff-78dd-47ff-a2c1-a3bb9b1b5ec4"
+  name="IT_Recrutement_Link"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a74b81ed-3fac-4e3e-bd2b-9e22dd315dce"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DIT_Recrutement_Link"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c79f5e4e-f746-44f2-83c8-6a2924763b43"
+        LastKnownName="DataAccess"
+        LastKnownLocation="Package1_0741.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b269f9e5-6804-4711-b219-246551ff8e42"
+        LastKnownName="Domain"
+        LastKnownLocation="Package9_0741.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1ff9d0be-9160-4a2f-9658-22b74d75cf49"
+        LastKnownName="Service"
+        LastKnownLocation="Package11_0741.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

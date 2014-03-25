@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using IT_Recrutement_Link.Domain.Entities;
+using IT_Recrutement_Link.Domain.Domain;
 using System.Collections.Generic;
 
 namespace IT_Recrutement_Link.DataAccess.Test
@@ -8,7 +8,7 @@ namespace IT_Recrutement_Link.DataAccess.Test
     [TestClass]
     public class ContextTest
     {
-        private Context context = new Context();
+        /*private Context context = new Context();
 
         [TestMethod]
         public void ShouldAddEntity()
@@ -56,11 +56,11 @@ namespace IT_Recrutement_Link.DataAccess.Test
                 c => c.Name.Equals("Bethesda")).Count == 1);
         }
         
-        
+        */
     }
     
     static class LegalEntityFactory
-    {
+    {/*
         public static Student CreateStudent(string name, string lastName)
         {
             return new Student { 
@@ -98,6 +98,6 @@ namespace IT_Recrutement_Link.DataAccess.Test
                 VideoUrl = "video"
             }; 
         }
-        
+        */
     }
 }

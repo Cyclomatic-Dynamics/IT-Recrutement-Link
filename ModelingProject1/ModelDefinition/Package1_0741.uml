@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c79f5e4e-f746-44f2-83c8-6a2924763b43"
+  name="DataAccess"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a35404c9-e616-4b13-9f23-d372bbd7c572"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DIT_Recrutement_Link.DataAccess"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b974ce04-15b9-4f92-81cb-61376b890ea4"
+        name="Context"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="52697895-9194-4796-915b-565ea86ad3d1"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="77e93904-4445-49cf-a0cf-09bf8580cb99"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="17a0de6a-5cf0-4a2f-892e-99d34b0e4494">
+                <propertyInstance
+                  Id="ed7f75a6-3844-4e68-89e2-da11238eb4a2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d7d4d15c-28e5-4c5c-937f-7c127ce43bc6">
+                <propertyInstance
+                  Id="e2d1d9c6-8616-4bdf-a743-78243fdc2b81"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d5124897-e9ac-4416-8179-f36539ed017a">
+                <propertyInstance
+                  Id="d35a1b03-a5ff-4b1a-945d-bac1b051c613"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e939633b-2684-4533-99a8-700f156de464">
+                <propertyInstance
+                  Id="94a20dee-4e8f-4dc3-a28c-68bf426bd73e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8878fe89-2704-4375-8249-bf3bc4b9b70b">
+                <propertyInstance
+                  Id="7863c89d-de5d-4e37-b397-76a67f535c3f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="749930f8-b8b6-4a6e-b7d0-23ce60770fe8">
+            <interfaceMoniker
+              Id="898faee9-152e-4a6f-8566-a0a9d2e9dbe7"
+              LastKnownName="IUnitOfWork"
+              LastKnownLocation="Package11_0741.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="62dfc458-bcc1-42b2-a925-e7c835a71fa7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="567448a7-f7fa-42d6-8b30-6defea096bb4"
+              LastKnownName="DbContext"
+              LastKnownLocation="Package8_0741.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="f290ed91-0b21-4abb-95d0-9b2835fbbd0c"
+            isDerived="false"
+            sourceEndRoleName="Context"
+            targetEndRoleName="Students"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a38ba2a2-116b-4342-946d-e782c002f90b"
+              LastKnownName="DbSet&lt;Student‎&gt;"
+              LastKnownLocation="Package8_0741.uml" />
+            <description>La propriété Students référence le type DbSet&lt;Student‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b89020fb-4713-4521-8fb8-92d6f17401c7"
+                  name="Context"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="df3a060a-88f9-4f8e-ac1d-606a4dd21cb8"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="77de4fb8-dfa8-4fab-83b8-ddcef7bf5445"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0628107b-e069-4712-abf5-88e29b12088f"
+                  name="Students"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="78955a88-6788-4367-a30e-74ea1366e66b"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f303b006-a408-46f8-a8f7-be3250a60bec"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1b7de095-4252-4dd1-974b-03c1c722cab8"
+            isDerived="false"
+            sourceEndRoleName="Context"
+            targetEndRoleName="Companies"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eb9065ab-0c22-4854-bd1a-f275597f74fe"
+              LastKnownName="DbSet&lt;Company‎&gt;"
+              LastKnownLocation="Package8_0741.uml" />
+            <description>La propriété Companies référence le type DbSet&lt;Company‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="691f0b60-ec81-443c-81fa-7a58370fdf5f"
+                  name="Context"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a9ba66cd-1cd1-45d2-95ca-6bc86d3c01fd"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="bae6cb7f-c12a-403d-bda2-9a383cde3f53"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="42f3a8b2-886a-4459-bcaa-e1e42fbf9d12"
+                  name="Companies"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0b112041-465a-41de-8074-0efae81653dd"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="47ee82b9-1ad4-4fbe-bda7-8f12ce439bdf"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e6f0cdde-7433-4cc1-8778-0ea654400d7d"
+            isDerived="false"
+            sourceEndRoleName="Context"
+            targetEndRoleName="Jobs"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1ccd9b78-641c-4b06-b8a7-d7d003accc75"
+              LastKnownName="DbSet&lt;Job‎&gt;"
+              LastKnownLocation="Package8_0741.uml" />
+            <description>La propriété Jobs référence le type DbSet&lt;Job‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2528e118-8d02-4326-bd8e-05a946247d45"
+                  name="Context"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4780f861-2443-43d5-a6bb-c7fdb17f304b"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2947288f-a55e-4685-8d4e-ef7539902943"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4cf5243f-656e-4158-a57d-d215f5d91f9b"
+                  name="Jobs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f07984de-a5e3-4e8e-8799-26e136d7be8b"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9daeeaef-3fae-47d8-806b-ae17243904cf"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="5c36215c-7d23-480e-96cd-8fbc232ff574"
+            name="Students"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f310165c-f51b-4f0d-a733-19cd5751ff12"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3DStudents"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1f2633eb-e8db-4b84-9b1e-40790f2f1c34"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09dd4ec2-30be-47ec-a7d6-6de0e7080cf0">
+                    <propertyInstance
+                      Id="0edd5a6a-ffee-4d92-b099-c89d28701d5e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1834ae0f-0527-4928-80ba-ffab7e045a17">
+                    <propertyInstance
+                      Id="741dd592-83e9-42b7-82ae-17e993e12976"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b71d6bc-9468-4189-8ead-497af1dabaa8">
+                    <propertyInstance
+                      Id="64b30f30-de7c-4fbb-bcfa-41c9beb0fd66"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a09db70-7cd0-46d7-9c07-53ac4f83a17b">
+                    <propertyInstance
+                      Id="21189964-2664-4028-be40-49f8a23a924b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="200dd573-424a-40c7-be4d-e0b00cbf6320">
+                    <propertyInstance
+                      Id="8a8d6245-173d-480e-a507-dabda3c1ec26"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d33d798c-ada1-48ec-9f7c-db58e59cf790">
+                    <propertyInstance
+                      Id="0c7acdc0-2d8c-4cb1-a335-a9db72f2cb3f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26dc7e3d-39fc-4feb-8ef2-28729519e840">
+                    <propertyInstance
+                      Id="cdc2f39d-dc11-4600-9d93-cf0388706039"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a38ba2a2-116b-4342-946d-e782c002f90b"
+                LastKnownName="DbSet&lt;Student‎&gt;"
+                LastKnownLocation="Package8_0741.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="476a2cae-c536-4e60-b542-d7ee20d6044a"
+            name="Companies"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ea4a4e4a-d178-471c-b130-183f04a57b6c"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3DCompanies"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dbc10ac9-087b-425a-986e-bb540511c6bc"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bf98766-546b-45ee-9af1-54f4d1506d68">
+                    <propertyInstance
+                      Id="acbad61f-ba76-4adb-8f04-d3c9125c34e6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e75217c-51ea-45d3-a45a-6b44b4d15b39">
+                    <propertyInstance
+                      Id="8a3f99c5-f5d6-47ba-8dae-6bf58789219b"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f71661a9-ad75-4fb6-b245-3a50e7e0d4cb">
+                    <propertyInstance
+                      Id="e244e6b1-7736-470a-a16c-aedfb2c9a8be"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16fb05dd-8952-4bbd-a525-b02f2200efa6">
+                    <propertyInstance
+                      Id="92ea7969-4621-4b26-a65f-5cda2bacce2a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b86243a-adb9-4527-b79d-df87b41b5ef2">
+                    <propertyInstance
+                      Id="52fb9101-03a3-4f4d-8207-c796f023798f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b69dae05-42c4-48db-af69-376855efe039">
+                    <propertyInstance
+                      Id="4543c0a9-47b5-4c5b-a32d-99e86b7f8c98"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3dcc1932-f877-4408-9fd2-cc3a1a9bbbcb">
+                    <propertyInstance
+                      Id="bce6d633-b177-4a79-bd4b-cae6c435a461"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="eb9065ab-0c22-4854-bd1a-f275597f74fe"
+                LastKnownName="DbSet&lt;Company‎&gt;"
+                LastKnownLocation="Package8_0741.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="408e77df-bad1-4957-b126-a0f57389f1e9"
+            name="Jobs"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b8aab3e4-8c22-4807-b39a-ac1096ab250d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3DJobs"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2a44b2e9-2232-40ef-9951-f53a6483fbd1"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d04796f9-0517-4b9e-a696-dfcb32344b4e">
+                    <propertyInstance
+                      Id="3cb4ca06-4230-4cfc-a5a9-e80aa72510fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf615cea-cace-4387-a5ee-7682f7f9cff6">
+                    <propertyInstance
+                      Id="27b169d7-c37e-49d7-9111-a1d878e12cb8"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75aafc96-dd35-47a1-a3a2-aa7eab418e27">
+                    <propertyInstance
+                      Id="d7e1c4a1-0e12-4bce-91e4-c5dc31c2938c"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c95dc29b-fa3d-45ae-864a-4bb8164ffa3d">
+                    <propertyInstance
+                      Id="267b70fc-9ab2-4eec-8ba9-4bc940d54383"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07c3af85-bd1c-47de-9918-f8c84cbc6a49">
+                    <propertyInstance
+                      Id="c3e6188b-735c-4659-ac4a-8feece2e7098"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e07ac5cc-8af1-42eb-8850-93e69ce28109">
+                    <propertyInstance
+                      Id="914a41ca-ab2b-47e5-964a-19c0901317dc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26abd4c2-499b-4cf3-ad59-9ab531e6a00c">
+                    <propertyInstance
+                      Id="39166634-52cd-41e3-a02e-8143d1a7f81b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1ccd9b78-641c-4b06-b8a7-d7d003accc75"
+                LastKnownName="DbSet&lt;Job‎&gt;"
+                LastKnownLocation="Package8_0741.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="bdff5ff4-af37-4cb2-8f69-5e13a4df96f7"
+            name="connectionString"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="acfe765c-12a9-44ce-bc1a-b4ad740290f1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3DconnectionString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cb44703d-7bba-4a41-a902-5f7090dc101e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9f0100e-fc7f-48e0-8f70-b67fa588bd01">
+                    <propertyInstance
+                      Id="73878f98-c839-4366-8436-3ee178722bf1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c76f8923-e52e-4b56-b134-1676b2ee8ed4">
+                    <propertyInstance
+                      Id="b89ba527-c954-41ed-8319-ecd2d9abecb9"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f2ff551-009d-42da-b6f9-43764a7b476f">
+                    <propertyInstance
+                      Id="47b61498-aed5-40b5-ba96-ff1d5a7dc89f"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="720640c5-33cb-4782-b919-503e3019e63a">
+                    <propertyInstance
+                      Id="ed0d15b8-97f1-4bfc-800b-66203e223c22"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52ddc188-84a1-49b4-9f74-c30128ed82f5">
+                    <propertyInstance
+                      Id="bd34d211-07e4-47fb-9a00-f3d68d2c0457"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1b4c320e-ca07-46fc-8dfe-b0c1376723f7"
+            name="Context"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f7e59748-0a87-456d-af48-30fd2875b34e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="af40b5b7-b13a-4efb-8269-bcc3ba747621"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ade4006e-7b56-4f3f-ac2f-6f57b87254c2">
+                    <propertyInstance
+                      Id="7c5557b4-baed-4979-949a-e9abb0fb9e50"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="edac2094-a703-4465-9b7c-2d660bb0d60c">
+                    <propertyInstance
+                      Id="169c4310-13a1-49a7-9953-82651879a4dd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ad51471-f4b3-4cc0-84aa-3a9c8f5a0fec">
+                    <propertyInstance
+                      Id="ac864d93-0b8c-4195-adc1-8846f0064b51"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2b86ca3-cdf3-4e98-bb42-47e834a4ea02">
+                    <propertyInstance
+                      Id="fa12b902-a31c-4fd7-a008-4a33954b4afc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7504c805-be9c-4b98-bf88-04672c703f8f">
+                    <propertyInstance
+                      Id="3ffdeb8c-4f31-4d63-8853-e51eef30d19e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e4af4d9-098d-4d76-9715-453521c09e35">
+                    <propertyInstance
+                      Id="d705d5bd-1786-49cd-8911-3ce42028f096"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="90740ed1-67d0-4927-893c-c0d735aa88ec"
+            name="Commit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a12edd2d-443f-4a13-868c-b798ad7df24a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3DCommit"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3b6f377d-884a-47d0-b837-b8962bbe26e1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc196ab2-9e5a-4ac2-a1be-c4e3a8d92954">
+                    <propertyInstance
+                      Id="b763c0a0-a7d4-47a7-a50a-4818c0bfc26f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="560c04c9-d256-4b1f-a078-58629688a047">
+                    <propertyInstance
+                      Id="02a2b963-af3d-49e6-a2d6-dc87db01ddd6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d671926e-3dce-4ea4-85ad-1442cfdb3cb5">
+                    <propertyInstance
+                      Id="bdc7f28a-b27d-4850-8810-c2fd94a9b2c1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1976a70-8098-41df-9a9e-e050d6816486">
+                    <propertyInstance
+                      Id="da60e122-68c5-4eda-9599-3d401d656420"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3266b2b-de71-498b-9386-24846f09a31d">
+                    <propertyInstance
+                      Id="7830603a-711e-40c1-b185-731746538e99"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ced7a2dc-b878-4fb6-87b7-77d68648aad9">
+                    <propertyInstance
+                      Id="bedd9de3-a12e-41b8-8800-1e0c607c7f38"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="43bc2d5c-c746-457a-b124-688d2d0d4d2c"
+            name="Add‎&lt;T‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="394995a5-17d6-42a5-bc8a-304dbd92cd9f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DAdd GenericParameterCount%3D1 OverloadingParameters%3D[(ParameterIdentifier%3D0)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3a7fc0cc-4ac5-487c-b60c-853990e6975e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee4dd9b9-3427-4afd-9546-4ad807df15ec">
+                    <propertyInstance
+                      Id="50e6ecab-35e3-46e7-a93d-f9dc7d7abb98"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64c9170a-7836-4403-954e-48f3d3f53cb9">
+                    <propertyInstance
+                      Id="29f8d099-61cb-4289-9253-2b98e3438bf6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e199d5d5-8a31-4f8a-b053-10ef151a4f21">
+                    <propertyInstance
+                      Id="64f1e4e1-f66b-4e04-b8e0-4d3706c7b330"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9279d319-3979-48d0-8937-40ca7b72aca6">
+                    <propertyInstance
+                      Id="4a01dcbb-ae61-4013-847e-82cb1c405433"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ea07068-5b4d-4cad-a720-614b1e601988">
+                    <propertyInstance
+                      Id="3a478bec-d38f-4324-bed0-a29b88b13444"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bce7565b-c39d-4919-98cd-136354d491b6">
+                    <propertyInstance
+                      Id="7377fb97-539c-4257-8ec8-cbc8d0c736b9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e87a7e32-3037-4d01-9e5a-6fa95f576a85"
+                  name="entity"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c22a1c99-9af6-4a9f-a0fe-349af04e1c02"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DAdd GenericParameterCount%3D1 OverloadingParameters%3D[(ParameterIdentifier%3D0)]) ParameterIdentifier%3Dentity"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="611b04b3-c3c5-42c7-a6ea-c68449692a46"
+                      LastKnownName="T"
+                      LastKnownLocation="Package4_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="269b4e2d-d042-45ff-916c-126ff24af54a"
+            name="Remove‎&lt;T‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="56a42a51-ec04-4817-9685-18b0d414e7e2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DRemove GenericParameterCount%3D1 OverloadingParameters%3D[(ParameterIdentifier%3D0)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d66ece97-3a73-4db1-8576-db36f3477bd4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="162236e7-88df-4959-a5d1-c7f4291a2051">
+                    <propertyInstance
+                      Id="485f51de-ad69-4af3-8a1d-c409cadce78b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c4bdc82-7536-4f0e-b431-2c16b2657c7c">
+                    <propertyInstance
+                      Id="7e4ba685-3edd-4f67-9630-f68288f6bd21"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3760a249-c015-463c-a057-ff48d3912e57">
+                    <propertyInstance
+                      Id="12ab345a-78b9-47a5-b6ae-a9cf2beae196"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1a0de1d-a078-48ee-8850-bef8c40c8f14">
+                    <propertyInstance
+                      Id="34b9c328-775b-4805-8b49-afffc4f177c8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d47d4d8-a11c-4a25-8633-2a8f2087e816">
+                    <propertyInstance
+                      Id="774a5914-a4c6-48cd-915b-a02e51c10f2b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3da79132-50b7-4c53-b046-5a8f6c2f2f42">
+                    <propertyInstance
+                      Id="e292bd3d-87c0-445b-b997-d835a0ceceb6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c58a470b-2054-4449-bf99-0fa512e8a15a"
+                  name="entity"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d64cd8f2-19f9-4d90-8a55-8ae6332054c2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DRemove GenericParameterCount%3D1 OverloadingParameters%3D[(ParameterIdentifier%3D0)]) ParameterIdentifier%3Dentity"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="611b04b3-c3c5-42c7-a6ea-c68449692a46"
+                      LastKnownName="T"
+                      LastKnownLocation="Package4_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5bb9f94c-a614-4cd3-9639-9d0d99d2c50f"
+            name="Update‎&lt;T‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fa8477c9-6420-45f0-99e3-2251918b908c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DUpdate GenericParameterCount%3D1 OverloadingParameters%3D[(ParameterIdentifier%3D0)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7779fccb-1ca2-4253-9303-cf9bbe7c2445"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0dadebf1-74d3-495d-bc6e-4c9aa75812d7">
+                    <propertyInstance
+                      Id="de384c57-1cfe-4096-9c0c-677c90e73a4d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="928d65c0-2bb2-4d53-8507-d15cc02c8cc6">
+                    <propertyInstance
+                      Id="50f5f110-9088-466f-8e19-d268f2f98843"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="595f1d2e-2308-4a82-b0c2-f206810b5df4">
+                    <propertyInstance
+                      Id="ecc61996-4c05-408a-a455-120f0d9adb87"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa1cd497-95c5-489a-97b2-ad87622d9fd3">
+                    <propertyInstance
+                      Id="98297455-6b09-4479-a3bd-e9f4eec5397e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f726d6e8-0518-4e67-9d81-1bcc5f9b16e5">
+                    <propertyInstance
+                      Id="9eb4fb50-07cd-48f2-a4fc-df023ec9a283"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd005cec-9654-4df8-b556-e5473e0ab9df">
+                    <propertyInstance
+                      Id="657c2474-71f2-49d2-acdc-6133ff0be32d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c887289c-f0d0-4b18-b946-3f5a152be067"
+                  name="entity"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d39c7d68-f609-4ed6-8d15-fb201fdd33a5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DUpdate GenericParameterCount%3D1 OverloadingParameters%3D[(ParameterIdentifier%3D0)]) ParameterIdentifier%3Dentity"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="611b04b3-c3c5-42c7-a6ea-c68449692a46"
+                      LastKnownName="T"
+                      LastKnownLocation="Package4_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f5666693-e967-483f-a791-d1084f604aba"
+            name="FindById‎&lt;T‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ec9cbad5-a0ab-46b3-8696-83c18a4571e4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DFindById GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f3dcb7bc-db87-48dc-92b7-e0fafa0ce13e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="343bc194-1d01-4b04-999a-b11c00f0b3e4">
+                    <propertyInstance
+                      Id="ee614739-1483-46bb-b671-3805954d28fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73dc55f5-2c61-4372-87ca-a8e4763e8b31">
+                    <propertyInstance
+                      Id="f011e8fb-f99b-4631-ba54-3caee7577f32"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2274bf93-e9a9-4475-b452-7341de91e268">
+                    <propertyInstance
+                      Id="2ceef65b-d736-4f41-868d-73125ccc9b1c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5383cad-0aa6-4ce4-91ad-ce5bd8aa78db">
+                    <propertyInstance
+                      Id="d69c3700-4514-4c89-945e-a5263caebcb3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ef5a9af-ced9-4494-8083-eda095e1b79e">
+                    <propertyInstance
+                      Id="58072ba2-e851-4c6c-9445-2a822b2a153f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="904f0bd7-0f5a-41b7-8e7c-4fda6d7496fe">
+                    <propertyInstance
+                      Id="f1c5bc58-845d-4716-82b2-5d2099d90746"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8be8d2d5-c30a-490d-b399-a4369b481c75"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="611b04b3-c3c5-42c7-a6ea-c68449692a46"
+                      LastKnownName="T"
+                      LastKnownLocation="Package4_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc05038d-f078-4eb7-8931-b3bac0a2430d"
+                  name="id"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="488fb122-4ad9-4834-9753-744aeedc70af"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DFindById GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Did"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0da6583a-8784-4271-a2d4-c18e07e1b194"
+            name="FindMany‎&lt;T‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d5ff6d1a-f530-4b53-b04f-e431d4625a6a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DFindMany GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Core.dll&quot; Namespace%3DSystem.Linq.Expressions Type%3D(Name%3DExpression GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DFunc GenericParameterCount%3D2 GenericArguments%3D[(ParameterIdentifier%3D0)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]))]))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f0de8912-2f87-45b3-b44a-b66f1ca3f9b1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5638d938-dfde-4584-a5f2-3ff8cf3a85ba">
+                    <propertyInstance
+                      Id="535abf26-0296-48d6-824f-8927158c2c8f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="866ce9d6-3f9c-42d4-ba91-2a548558c1a5">
+                    <propertyInstance
+                      Id="a0ca3210-601e-4a37-a22a-d75bcbce6770"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82592114-a32e-4466-adef-e0464d5d7354">
+                    <propertyInstance
+                      Id="7547592e-98b9-409f-a8f7-b7aa0a4138a6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0f7a2c1-de4a-41f6-af2f-286107ebbe6b">
+                    <propertyInstance
+                      Id="74ef7a82-b369-49c1-afe1-92d71f2e2739"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25594c42-3b04-44c0-85ee-f447afd652ee">
+                    <propertyInstance
+                      Id="7269742f-bf65-494f-85c7-d3b4c89859fa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c204357-1383-496b-9ff9-90f62a0a0288">
+                    <propertyInstance
+                      Id="f1acc90a-8fe1-45dc-9fd6-524b07b73208"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c077a51d-c0c9-4714-8ffb-b9a817591336"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="b78e6993-7df2-491f-b9c0-795a9b2a8b3d"
+                      LastKnownName="IList&lt;T‎&gt;"
+                      LastKnownLocation="Package4_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f9e8080-8e78-4526-92bd-0f32e901f0cc"
+                  name="where"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1a60a9f9-df87-4409-b514-a8c3b2bef73c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DFindMany GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Core.dll&quot; Namespace%3DSystem.Linq.Expressions Type%3D(Name%3DExpression GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DFunc GenericParameterCount%3D2 GenericArguments%3D[(ParameterIdentifier%3D0)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]))]))]) ParameterIdentifier%3Dwhere"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="03f9f0d9-3b32-4460-8eac-dc22a4f32777"
+                      LastKnownName="Expression&lt;Func‎&lt;T‎, Boolean‎&gt;‎&gt;"
+                      LastKnownLocation="Package6_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="af8bba88-d9dd-47df-8b53-5fcdce285bc7"
+            name="FindAll‎&lt;T‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d2b9fa0e-7d69-4f69-b540-b2a262129d0e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FChedy%2FIT-Recrutement-Link%2FIT-Recrutement-Link.DataAccess%2Fbin%2FDebug%2FIT-Recrutement-Link.DataAccess.dll Namespace%3DIT_Recrutement_Link.DataAccess Type%3DContext Member%3D(Name%3DFindAll GenericParameterCount%3D1)"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bf28c3c4-cdde-4548-b4e9-4a5f4a7a4d92"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5683901-8541-465a-a558-ed07d31d26ec">
+                    <propertyInstance
+                      Id="9c42b49f-d7d8-4728-b1c7-4b9dc8e3d4ad"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ebdbfb2-368a-4f5c-8faf-0ae01dfd7fd1">
+                    <propertyInstance
+                      Id="86aa1f8e-b009-4873-a714-c5fb5deace67"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d0c9402-aa03-4f5c-b6d8-c19627c32020">
+                    <propertyInstance
+                      Id="207b3202-bad9-48f6-aa9e-3bc607e723e9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa7dbdb6-bd1c-4291-9dd4-fc13aa166e3a">
+                    <propertyInstance
+                      Id="824820bd-f078-4a74-9aa0-332126a305ab"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5359c55d-9423-427e-98c1-ae293c5b7d2e">
+                    <propertyInstance
+                      Id="e727abf1-e7ba-4f4d-a0f4-ed75ff232a14"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed774565-4f14-4d39-a34f-0c0b8e800dba">
+                    <propertyInstance
+                      Id="cebbda08-ace8-4c2b-85a2-eb6ac6d878f7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0ea8d592-af5b-41b2-ba57-1542b0bd49e0"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="b78e6993-7df2-491f-b9c0-795a9b2a8b3d"
+                      LastKnownName="IList&lt;T‎&gt;"
+                      LastKnownLocation="Package4_0741.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
