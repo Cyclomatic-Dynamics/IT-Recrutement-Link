@@ -25,12 +25,19 @@ namespace IT_Recrutement_Link.Service
             unitOfWork.Update<Company>(company);
             unitOfWork.Commit();
         }
-        
+        public void RemoveCompany(Company company)
+        {
+            unitOfWork.Remove<Company>(company);
+            unitOfWork.Commit();
+        }
         public Company ViewCompany(int id)
         {
                 return unitOfWork.FindById<Company>(id);
         }
-        
+        public IList<Company> ViewAllCompanies()
+        {
+            return unitOfWork.FindMany<Company>(c => true);
+        }
         
         public void AddJob(string jobname, Company company)
         {

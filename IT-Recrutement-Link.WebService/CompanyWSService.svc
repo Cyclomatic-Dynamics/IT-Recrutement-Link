@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="IT_Recrutement_Link.WebService.CompanyWSService" CodeBehind="CompanyWSService.svc.cs" %>

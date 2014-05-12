@@ -8,57 +8,54 @@ using System.Text;
 
 namespace IT_Recrutement_Link.WebService
 {
-    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom d'interface "IService1" à la fois dans le code et le fichier de configuration.
+    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom d'interface "ICompanyWSService" à la fois dans le code et le fichier de configuration.
     [ServiceContract]
-    public interface IStudentWSService
+    public interface ICompanyWSService
     {
-
-        [WebGet(UriTemplate = "/GetAllStudents",
+        [WebGet(UriTemplate = "/GetAllCompanies",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        List<StudentWS> GetAllStudents();
-        [WebInvoke(UriTemplate = "/GetStudent",
+        List<CompanyWS> GetAllCompanies();
+        [WebInvoke(UriTemplate = "/GetCompany",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        StudentWS GetStudent(int id);
-        [WebInvoke(UriTemplate = "/NewStudent",
+        CompanyWS GetCompany(int id);
+        [WebInvoke(UriTemplate = "/NewCompany",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        void NewStudent(StudentWS student);
-        [WebInvoke(UriTemplate = "/UpdateStudent",
+        void NewCompany(CompanyWS company);
+        [WebInvoke(UriTemplate = "/UpdateCompany",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        void UpdateStudent(StudentWS student);
-        [WebInvoke(UriTemplate = "/DeleteStudent",
+        void UpdateCompany(CompanyWS company);
+        [WebInvoke(UriTemplate = "/DeleteCompany",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        void DeleteStudent(StudentWS student);
-        // TODO: ajoutez vos opérations de service ici
+        void DeleteCompany(CompanyWS company);
+        
     }
-
-
-    // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
+         
     [DataContract]
-    public class StudentWS
+    public class CompanyWS
     {
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public string Email { get; set; }
-        [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public string LastName { get; set; }
+        public string URL { get; set; }
         [DataMember]
-        public DateTime BirthDate { get; set; }
+        public string ActivitySectorName { get; set; }
         [DataMember]
-        public string Diplomas { get; set; }
+        public string Address { get; set; }
         [DataMember]
-        public string Experiences { get; set; }
+        public string Country { get; set; }
+        [DataMember]
+        public string CompanySize { get; set; }
     }
 }
