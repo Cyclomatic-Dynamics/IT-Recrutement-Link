@@ -10,14 +10,17 @@ using IT_Recrutement_Link.Domain.Domain;
 using IT_Recrutement_Link.DataAccess;
 namespace IT_Recrutement_Link.WebService
 {
-    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom de classe "Service1" dans le code, le fichier svc et le fichier de configuration.
-    // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class StudentWSService : IStudentWSService
     {
+        private StudentService studentService;
+        public StudentWSService()
+        {
+            studentService = new StudentService(new Context());
+        }
         public List<StudentWS> GetAllStudents()
         {
-            StudentService service = new StudentService(new Context());
-            IList<Student> allStudents = service.ViewAllStudents();
+            //StudentService studentService = new StudentService(new Context());
+            IList<Student> allStudents = studentService.ViewAllStudents();
             return convertDomainToDataContractMany(allStudents);
         }
         private List<StudentWS> convertDomainToDataContractMany(IList<Student> students)
@@ -43,29 +46,30 @@ namespace IT_Recrutement_Link.WebService
 
             };
         }
-        public StudentWS GetStudent(int id)
+        public StudentWS GetStudent(string id)
         {
-            StudentService service = new StudentService(new Context());
-            Student st = service.ViewStudent(id);
+            int intId = Convert.ToInt32(id);
+            //StudentService studentService = new StudentService(new Context());
+            Student st = studentService.ViewStudent(intId);
             return convertDomainToDataContractOne(st);
         }
         public void NewStudent(StudentWS student)
         {
-            StudentService service = new StudentService(new Context());
-            Student student1 = new Student(student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
-            service.AddStudent(student1);
+            //StudentService studentService = new StudentService(new Context());
+            Student student1 = new Student(student.Id, student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
+            studentService.AddStudent(student1);
         }
         public void UpdateStudent(StudentWS student)
         {
-            StudentService service = new StudentService(new Context());
-            Student student1 = new Student(student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
-            service.ModifyStudent(student1);
+            //StudentService studentService = new StudentService(new Context());
+            Student student1 = new Student(student.Id, student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
+            studentService.ModifyStudent(student1);
         }
-        public void DeleteStudent(StudentWS student)
+        public void DeleteStudent(string id)
         {
-            StudentService service = new StudentService(new Context());
-            Student student1 = new Student(student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
-            service.RemoveStudent(student1);
+            int intId = Convert.ToInt32(id);
+           // StudentService studentService = new StudentService(new Context());
+            studentService.RemoveStudent(studentService.ViewStudent(intId));
         }
 
     }

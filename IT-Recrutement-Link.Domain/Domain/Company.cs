@@ -23,14 +23,20 @@ namespace IT_Recrutement_Link.Domain.Domain
         public string Country { get; set; }
         public string CompanySize { get; set; }
 
-        public Company(string Name, string URL,string Address,string ActivitySectorName,string Country)
+        public Company(int Id, string Email, string Name, string URL,string Address,string ActivitySectorName,string Country)
         {
+            this.Id = Id;
+            this.Email = Email;
                 this.URL = URL;
                 this.ActivitySectorName = ActivitySectorName;
                 this.Name = Name;
                 this.Address = Address;
                 this.Country = Country;
                 this.CompanySize = CompanySize;
+        }
+        public Company()
+        {
+
         }
         public Job CreateJob(string jobName)
         {

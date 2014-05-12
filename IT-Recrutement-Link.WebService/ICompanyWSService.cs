@@ -12,31 +12,34 @@ namespace IT_Recrutement_Link.WebService
     [ServiceContract]
     public interface ICompanyWSService
     {
-        [WebGet(UriTemplate = "/GetAllCompanies",
+        [WebGet(UriTemplate = "/AllCompanies",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
         List<CompanyWS> GetAllCompanies();
-        [WebInvoke(UriTemplate = "/GetCompany",
+        [WebGet(UriTemplate = "/Company/{id}",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        CompanyWS GetCompany(int id);
-        [WebInvoke(UriTemplate = "/NewCompany",
+        CompanyWS GetCompany(string id);
+        [WebInvoke(UriTemplate = "/Company",
+         Method="POST",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
         void NewCompany(CompanyWS company);
-        [WebInvoke(UriTemplate = "/UpdateCompany",
+        [WebInvoke(UriTemplate = "/Company",
+            Method="PUT", 
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
         void UpdateCompany(CompanyWS company);
-        [WebInvoke(UriTemplate = "/DeleteCompany",
+        [WebInvoke(UriTemplate = "/Company/{id}",
+            Method="DELETE",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        void DeleteCompany(CompanyWS company);
+        void DeleteCompany(string id);
         
     }
          
@@ -45,6 +48,8 @@ namespace IT_Recrutement_Link.WebService
     {
         [DataMember]
         public int Id { get; set; }
+        [DataMember]
+        public string Email { get; set; }
         [DataMember]
         public string Name { get; set; }
         [DataMember]

@@ -23,8 +23,9 @@ namespace IT_Recrutement_Link.Domain.Domain
         public string Diplomas { get; set; }
         [Required]
         public string Experiences { get; set; }
-        public Student(string Name, string Email, string LastName, DateTime BirthDate, string Diplomas, string Experiences)
+        public Student(int Id, string Name, string Email, string LastName, DateTime BirthDate, string Diplomas, string Experiences)
         {
+                this.Id = Id;
                 this.Name = Name;
                 this.Email = Email;
                 this.LastName = LastName;

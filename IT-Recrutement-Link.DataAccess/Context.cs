@@ -14,7 +14,7 @@ namespace IT_Recrutement_Link.DataAccess
     public class Context : DbContext, IUnitOfWork
     {
         private static string connectionString = "Server=tcp:m5v781rgwy.database.windows.net,1433;Database=main-db;User ID=it-rec-link-data@m5v781rgwy;Password=CyclomaticDynamics2;Trusted_Connection=False;Encrypt=True;Connection Timeout=30";
-        private static string connectionStringTest = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\amine\\Desktop\\base.mdf;Integrated Security=True;Connect Timeout=30";
+        private static string connectionStringTest = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\Chedy\\Desktop\\base.mdf;Integrated Security=True;Connect Timeout=30";
         //private static string connectionString = null;
         public DbSet<User> Users { get; set; }
         public DbSet<Student> Students { get; set; }
@@ -98,21 +98,27 @@ namespace IT_Recrutement_Link.DataAccess
                 });
                 context.Add<Company>(new Company
                 {
-                    Id = 7,
-                    Name = "esprit",
+                    Id = 4,
+                    Name = "Esprit",
+                    Email = "esprit@company.com",
                     URL = "www.esprit.tn",
                     Address = "al ghazela",
                     ActivitySectorName = "education",
                     CompanySize = "big",
                     Country = "Tunisia"
                 });
-                context.Add<Job>( new Job
+                context.Add<Company>(new Company
                 {
                     Id = 5,
-                    Name = "",
-                    company = ,
-                    registeredStudents
+                    Name = "Acme",
+                    Email = "acme@company.com",
+                    URL = "www.acme.com",
+                    Address = "36 Terry Street",
+                    ActivitySectorName = "CardBoard Boxes",
+                    CompanySize = "big",
+                    Country = "USA"
                 });
+
                 context.Commit();
             }
         }

@@ -12,33 +12,39 @@ namespace IT_Recrutement_Link.WebService
     [ServiceContract]
     public interface IStudentWSService
     {
-
-        [WebGet(UriTemplate = "/GetAllStudents",
+        [OperationContract]
+        [WebGet(UriTemplate = "/AllStudents",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
         List<StudentWS> GetAllStudents();
-        [WebInvoke(UriTemplate = "/GetStudent",
+        [OperationContract]
+        [WebGet(UriTemplate = "/Student/{id}",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        StudentWS GetStudent(int id);
-        [WebInvoke(UriTemplate = "/NewStudent",
+        StudentWS GetStudent(string id);
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/Student",
+            Method="POST",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
         void NewStudent(StudentWS student);
-        [WebInvoke(UriTemplate = "/UpdateStudent",
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/Student",
+            Method="PUT",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
         void UpdateStudent(StudentWS student);
-        [WebInvoke(UriTemplate = "/DeleteStudent",
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/Student/{id}",
+            Method="DELETE",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json,
          BodyStyle = WebMessageBodyStyle.Bare)]
-        void DeleteStudent(StudentWS student);
-        // TODO: ajoutez vos opérations de service ici
+        void DeleteStudent(string id);
     }
 
 

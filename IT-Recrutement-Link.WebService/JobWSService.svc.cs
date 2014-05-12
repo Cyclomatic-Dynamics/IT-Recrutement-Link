@@ -66,7 +66,7 @@ namespace IT_Recrutement_Link.WebService
         public List<JobWS> GetOwnJob(CompanyWS cp)
         {
             JobService service = new JobService(new Context());
-            Company company1 = new Company(cp.Name, cp.URL, cp.Address, cp.ActivitySectorName, cp.Country);
+            Company company1 = new Company(cp.Id, cp.Email, cp.Name, cp.URL, cp.Address, cp.ActivitySectorName, cp.Country);
             IList<Job> jobs = service.ViewOwnJobs(company1);
             return convertDomainToDataContractMany(jobs);
         }

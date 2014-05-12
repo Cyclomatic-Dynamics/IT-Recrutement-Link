@@ -14,10 +14,15 @@ namespace IT_Recrutement_Link.WebService
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez CompanyWSService.svc ou CompanyWSService.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class CompanyWSService : ICompanyWSService
     {
+        private CompanyService companyService;
+        public CompanyWSService()
+        {
+            companyService = new CompanyService(new Context());
+        }
         public List<CompanyWS> GetAllCompanies()
         {
-            CompanyService service = new CompanyService(new Context());
-            IList<Company> companies = service.ViewAllCompanies();
+           // CompanyService companyService = new CompanyService(new Context());
+            IList<Company> companies = companyService.ViewAllCompanies();
             return convertDomainToDataContractMany(companies);
         }
         private List<CompanyWS> convertDomainToDataContractMany(IList<Company> companies)
@@ -34,6 +39,7 @@ namespace IT_Recrutement_Link.WebService
             return new CompanyWS
             {
                 Id = company.Id,
+                Email = company.Email,
                 URL = company.URL,
                 ActivitySectorName = company.ActivitySectorName,
                 Name = company.Name,
@@ -43,29 +49,30 @@ namespace IT_Recrutement_Link.WebService
 
             };
         }
-        public CompanyWS GetCompany(int id)
+        public CompanyWS GetCompany(string id)
         {
-            CompanyService service = new CompanyService(new Context());
-            Company cp = service.ViewCompany(id);
+            int intId = Convert.ToInt32(id);
+            //CompanyService companyService = new CompanyService(new Context());
+            Company cp = companyService.ViewCompany(intId);
             return convertDomainToDataContractOne(cp);
         }
         public void NewCompany(CompanyWS company)
         {
-            CompanyService service = new CompanyService(new Context());
-            Company company1 = new Company(company.Name, company.URL, company.Address, company.ActivitySectorName, company.Country);
-            service.AddCompany(company1);
+            //CompanyService companyService = new CompanyService(new Context());
+            Company company1 = new Company(company.Id, company.Email, company.Name, company.URL, company.Address, company.ActivitySectorName, company.Country);
+            companyService.AddCompany(company1);
         }
         public void UpdateCompany(CompanyWS company)
         {
-            CompanyService service = new CompanyService(new Context());
-            Company company1 = new Company(company.Name,company.URL,company.Address,company.ActivitySectorName,company.Country);
-            service.ModifyCompany(company1);
+            //CompanyService companyService = new CompanyService(new Context());
+            Company company1 = new Company(company.Id, company.Email, company.Name, company.URL, company.Address, company.ActivitySectorName, company.Country);
+            companyService.ModifyCompany(company1);
         }
-        public void DeleteCompany(CompanyWS company)
+        public void DeleteCompany(string id)
         {
-            CompanyService service = new CompanyService(new Context());
-            Company company1 = new Company(company.Name, company.URL, company.Address, company.ActivitySectorName, company.Country);
-            service.RemoveCompany(company1);
+            //CompanyService companyService = new CompanyService(new Context());
+            int intId = Convert.ToInt32(id);
+            companyService.RemoveCompany(companyService.ViewCompany(intId));
         }
 
     }
