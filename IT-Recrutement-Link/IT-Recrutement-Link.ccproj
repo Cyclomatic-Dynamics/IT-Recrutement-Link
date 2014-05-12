@@ -39,6 +39,7 @@
   <ItemGroup>
     <Folder Include="IT-Recrutement-Link.WebContent\" />
     <Folder Include="IT-Recrutement-Link.WebServiceContent\" />
+    <Folder Include="Profiles" />
     <Folder Include="WebRole1Content\" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +62,9 @@
       <RoleName>IT-Recrutement-Link.WebService</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\WS-EndpointStaging.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

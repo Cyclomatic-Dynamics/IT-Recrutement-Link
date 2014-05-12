@@ -3,7 +3,7 @@
   <Role name="IT-Recrutement-Link.WebService">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=itreclinkstorage;AccountKey=QL6WJvrB+Lrk3sh7IAeCoAA/Xr+yZ+/cGS6x1bfi0f84A9sJfcHYTysByoic1n8r+XAWxEAYNnVPFilZB2giaw==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
