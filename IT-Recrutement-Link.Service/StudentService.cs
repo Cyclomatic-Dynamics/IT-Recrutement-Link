@@ -20,6 +20,11 @@ namespace IT_Recrutement_Link.Service
             unitOfWork.Add<Student>(student);
             unitOfWork.Commit();
         }
+        public void RemoveStudent(Student student)
+        {
+            unitOfWork.Remove<Student>(student);
+            unitOfWork.Commit();
+        }
         public Student ViewStudent(int id)
         {
                 return unitOfWork.FindById<Student>(id); 

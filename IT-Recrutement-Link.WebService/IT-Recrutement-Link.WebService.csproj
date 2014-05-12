@@ -90,10 +90,20 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CompanyWSService.svc" />
+    <Content Include="JobWSService.svc" />
     <Content Include="StudentWSService.svc" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AzureLocalStorageTraceListener.cs" />
+    <Compile Include="CompanyWSService.svc.cs">
+      <DependentUpon>CompanyWSService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ICompanyWSService.cs" />
+    <Compile Include="IJobWSService.cs" />
+    <Compile Include="JobWSService.svc.cs">
+      <DependentUpon>JobWSService.svc</DependentUpon>
+    </Compile>
     <Compile Include="StudentWSService.svc.cs">
       <DependentUpon>StudentWSService.svc</DependentUpon>
     </Compile>
@@ -141,7 +151,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1926</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -43,6 +43,30 @@ namespace IT_Recrutement_Link.WebService
 
             };
         }
+        public StudentWS GetStudent(int id)
+        {
+            StudentService service = new StudentService(new Context());
+            Student st = service.ViewStudent(id);
+            return convertDomainToDataContractOne(st);
+        }
+        public void NewStudent(StudentWS student)
+        {
+            StudentService service = new StudentService(new Context());
+            Student student1 = new Student(student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
+            service.AddStudent(student1);
+        }
+        public void UpdateStudent(StudentWS student)
+        {
+            StudentService service = new StudentService(new Context());
+            Student student1 = new Student(student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
+            service.ModifyStudent(student1);
+        }
+        public void DeleteStudent(StudentWS student)
+        {
+            StudentService service = new StudentService(new Context());
+            Student student1 = new Student(student.Name, student.Email, student.LastName, student.BirthDate, student.Diplomas, student.Experiences);
+            service.RemoveStudent(student1);
+        }
 
     }
 }

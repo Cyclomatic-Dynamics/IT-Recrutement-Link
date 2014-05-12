@@ -21,16 +21,24 @@ namespace IT_Recrutement_Link.Service
         {
                 return unitOfWork.FindById<Job>(id);
         }
-
-        public IList<Job> ViewJobs(string word)
+        public void AddJob(Job job)
         {
-            return unitOfWork.FindMany<Job>(j => j.Name.Equals(word));
+            unitOfWork.Add<Job>(job);
+            unitOfWork.Commit();
+        }
+        public IList<Job> ViewJobs()
+        {
+            return unitOfWork.FindMany<Job>(j => true);
         }
         public IList<Job> ViewOwnJobs(Company company1)
         {
             return unitOfWork.FindMany<Job>(j => j.company.Equals(company1));
         }
-
+        public void UpdateJob(Job job)
+        {
+            unitOfWork.Update<Job>(job);
+            unitOfWork.Commit();
+        }
         public void RemoveJob(int id)
         {
             RemoveJob(unitOfWork.FindById<Job>(id));
