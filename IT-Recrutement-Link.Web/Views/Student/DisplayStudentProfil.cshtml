@@ -1,4 +1,4 @@
-﻿
+﻿@model IT_Recrutement_Link.Domain.Entities.Student
 @{
     ViewBag.Title = "DisplayStudentProfil";
 }
@@ -8,7 +8,86 @@
 <fieldset>
     <legend>Student</legend>
     <div class="display-label">
-        @Html.DisplayName("Name")
+        @Html.DisplayNameFor(Model => Model.Name);
     </div>
-    
+    <div class="display-label">
+        @Html.DisplayFor(Model => Model.Name);
+    </div>
+   
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.LastName);
+    </div>
+    <div class="display-label">
+        @Html.DisplayFor(Model => Model.LastName);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.DateNaissance);
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(Model => Model.DateNaissance);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.University);
+    </div>
+    <div class="display-label">
+        @Html.DisplayFor(Model => Model.University);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.Experience);
+    </div>
+    <div class="display-label">
+        @Html.DisplayFor(Model => Model.Experience);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.Diplome);
+    </div>
+    <div class="display-label">
+        @Html.DisplayFor(Model => Model.Diplome);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.Formation);
+    </div>
+    <div class="display-label">
+        @Html.DisplayFor(Model => Model.Formation);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.ProfilePictureUrl);
+    </div>
+   @* <div class="display-field">
+        @Html.DisplayFor(Model => Model.ProfilePictureUrl);
+        @{string path = @Model.ProfilePictureUrl;}
+        <img alt="Student" src="@Url.Content(path)" />
+    </div>*@
+    @*@<div class="display-label">
+               @ViewBag.Name @ViewBag.LastName
+        </div>
+    @<div class="display-label">
+        @html.DisplayFor(model => model.ImageURL)
+        <img src="@ViewBag.url" alt="aaa" />
+    </div>
+    <div class="display-label">
+    @ViewBag.DateNaissance
+    </div>
+    <div class="display-label">
+    @ViewBag.University
+    </div>
+    <div class="display-label">
+    @ViewBag.Experience
+    </div>
+    <div class="display-label">
+    @ViewBag.Diplome
+    </div>
+    <div class="display-label">
+        @ViewBag.Formation
+    </div>
+    *@
+
+
+
 </fieldset>

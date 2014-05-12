@@ -29,7 +29,18 @@ namespace IT_Recrutement_Link.Service
             }
             catch (Exception)
             {
-                throw new EntityNotFoundException<Company>(id);
+                throw new EntityNotFoundException<Student>(id);
+            }
+        }
+        public Student ListStudent(int id)
+        {
+            try
+            {
+                return unitOfWork.FindMany<Student>();
+            }
+            catch (Exception)
+            {
+                throw new EntityNotFoundException<Student>(id);
             }
         }
         public void ModifyStudent(Student student)

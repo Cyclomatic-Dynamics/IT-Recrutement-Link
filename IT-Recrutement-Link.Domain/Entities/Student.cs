@@ -9,9 +9,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IT_Recrutement_Link.Domain.Entities
 {
     [Table("Students")] 
-    public class Student
+    public class Student : User
     {
-        [Key]
+        /*[Key]
         public int Id { get; set; }
         [MaxLength(50)]
         public string Email { get; set; }
@@ -19,7 +19,7 @@ namespace IT_Recrutement_Link.Domain.Entities
         public string PasswordHash { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string Name { get; set; }*/
         [Required]
         [MaxLength(50)]
         public string LastName { get; set; }
@@ -33,12 +33,12 @@ namespace IT_Recrutement_Link.Domain.Entities
         public List<string> Formation { get; set; }
         [Required]
         public List<string> Experience { get; set; }
-        [Required]
+        /*[Required]
         public string VideoUrl { get; set; }
         [Required]
         public string SlidesUrl { get; set; }
         [Required]
-        public string ProfilePictureUrl { get; set; }
+        public string ProfilePictureUrl { get; set; }*/
         [Required]
         public CompetenceSectorEnum CompetenceSectorName { get; set; }
         [Required]

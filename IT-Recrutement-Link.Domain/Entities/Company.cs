@@ -10,23 +10,31 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IT_Recrutement_Link.Domain.Entities
 {
     [Table("Companies")]
-    public class Company
+    public class Company : User
     {
-        [Key]
+        /*[Key]
         public int Id { get; set; }
         [MaxLength(50)]
         [Required(ErrorMessage="Name Required")]
         public string Name { get; set;}
         [Required]
         public string Email { get; set; }
+        private string _passhash;
         [Required]
-        public string PasswordHash { get; set; }
+        public string PasswordHash
+        {
+            get { return _passhash; }
+            set
+            {
+               // _passhash = HashSet(PasswordHash); 
+          
+        } }
         [Required]
         public string VideoUrl { get; set; }
         [Required]
         public string SlidesUrl { get; set; }
         [Required]
-        public string LogoPictureUrl { get; set; }
+        public string LogoPictureUrl { get; set; }*/
         [Required]
         public string URL { get; set; }
         public ActivitySectorEnum ActivitySectorName { get; set; }

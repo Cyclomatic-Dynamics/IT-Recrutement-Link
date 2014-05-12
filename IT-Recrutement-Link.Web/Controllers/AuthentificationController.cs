@@ -46,7 +46,7 @@ namespace IT_Recrutement_Link.Web.Controllers
                     if (nvc["ChosenChoice"].Equals("Student"))
                     {
                         loginStudent(nvc);
-                        return View("DisplayStudent");
+                        return View("DisplayStudentProfil");
                     }
                     else
                     {
