@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="IT_Recrutement_Link" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-10.2.2">
-  <WebRole name="IT-Recrutement-Link.Web" vmsize="Small">
+  <WebRole name="IT-Recrutement-Link.WebService" vmsize="Small">
     <Sites>
       <Site name="Web">
         <Bindings>
@@ -9,15 +9,13 @@
       </Site>
     </Sites>
     <Endpoints>
-      <InputEndpoint name="Endpoint1" protocol="http" port="8080" />
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
     </Endpoints>
     <Imports>
       <Import moduleName="Diagnostics" />
     </Imports>
-    <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Blob" />
-    </ConfigurationSettings>
-    <Certificates>
-    </Certificates>
+    <LocalResources>
+      <LocalStorage name="IT-Recrutement-Link.WebService.svclog" sizeInMB="1000" cleanOnRoleRecycle="false" />
+    </LocalResources>
   </WebRole>
 </ServiceDefinition>

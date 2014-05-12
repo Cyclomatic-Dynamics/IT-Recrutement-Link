@@ -15,9 +15,8 @@ namespace IT_Recrutement_Link.Service
         {
             this.unitOfWork = unitOfWork;
         }
-        public void AddCompany(Company company, string password)
+        public void AddCompany(Company company)
         {
-            company.PasswordHash = HashUtil.SHA1Hash(password);
             unitOfWork.Add<Company>(company);
             unitOfWork.Commit();
         }
@@ -26,36 +25,10 @@ namespace IT_Recrutement_Link.Service
             unitOfWork.Update<Company>(company);
             unitOfWork.Commit();
         }
-        public Company LoginCompany(string email, string password)
-        {
-            Company company = unitOfWork.FindMany<Company>(c => (c.Email.Equals(email))).
-                FirstOrDefault<Company>();
-            if (company != null)
-            {
-                if (HashUtil.SHA1Hash(password).Equals(company.PasswordHash))
-                {
-                    return company;
-                }
-                else
-                {
-                    throw new WrongCredentialException();
-                }
-            }
-            else
-            {
-                throw new WrongCredentialException();
-            }
-        }
+        
         public Company ViewCompany(int id)
         {
-            try
-            {
                 return unitOfWork.FindById<Company>(id);
-            }
-            catch (Exception)
-            {
-                throw new EntityNotFoundException<Company>(id);
-            }
         }
         
         

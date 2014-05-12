@@ -20,10 +20,7 @@ namespace IT_Recrutement_Link.Domain.Domain
         [Required]
         public DateTime BirthDate { get; set; }
         [Required]
-        public List<Diploma> Diplomas { get; set; }
+        public string Diplomas { get; set; }
         [Required]
-        public List<Experience> Experiences { get; set; }
-        public string PictureUrl { get; set; }
-        public string VideoUrl { get; set; }
-    }
+        public string Experiences { get; set; }    }
 }

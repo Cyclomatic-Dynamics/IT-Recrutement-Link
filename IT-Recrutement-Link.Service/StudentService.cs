@@ -29,5 +29,9 @@ namespace IT_Recrutement_Link.Service
             unitOfWork.Update<Student>(student);
             unitOfWork.Commit();
         }
+        public IList<Student> ViewAllStudents()
+        {
+            return unitOfWork.FindMany<Student>(s => true);
+        }
     }
 }

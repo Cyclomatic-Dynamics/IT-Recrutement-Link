@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceConfiguration serviceName="IT_Recrutement_Link" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
-  <Role name="IT-Recrutement-Link.Web">
+  <Role name="IT-Recrutement-Link.WebService">
     <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="Microsoft.WindowsAzure.Blob" value="DefaultEndpointsProtocol=https;AccountName=itreclink;AccountKey=n/4EDqWdQv+0mf9atqBUCW0lrL/YufkY2OM46gx5PsDIlNcXOK5nRxWBaywWM5sFUWPkN5b/DVaHmvg98NiDvQ==" />
     </ConfigurationSettings>
-    <Certificates>
-    </Certificates>
   </Role>
 </ServiceConfiguration>
