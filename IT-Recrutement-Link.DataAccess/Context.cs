@@ -20,7 +20,7 @@ namespace IT_Recrutement_Link.DataAccess
         public DbSet<Student> Students { get; set; }
 
         public Context()
-            : base(connectionStringTest)
+            : base(connectionString)
         {
             Database.SetInitializer<Context>(new ContextInitializer());
         }
