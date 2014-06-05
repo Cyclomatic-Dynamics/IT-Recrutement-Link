@@ -53,9 +53,9 @@ namespace IT_Recrutement_Link.WebService
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public Company company { get; private set; }
+        public Company company { get;  set; }
         [DataMember]
-        public IList<Student> registeredStudents { get; private set; }
+        public IList<Student> registeredStudents { get;  set; }
         
     }
 }

@@ -15,9 +15,9 @@ namespace IT_Recrutement_Link.Domain.Domain
         [Required]
         public string Name { get; set; }
         [Required]
-        public Company company { get; private set; }
+        public Company company { get;  set; }
         [Required]
-        public IList<Student> registeredStudents { get; private set; }
+        public IList<Student> registeredStudents { get;  set; }
         public Job() { }
         public Job(Company company, string Name)
         {
