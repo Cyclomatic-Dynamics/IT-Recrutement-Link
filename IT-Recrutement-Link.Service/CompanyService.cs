@@ -15,9 +15,9 @@ namespace IT_Recrutement_Link.Service
         {
             this.unitOfWork = unitOfWork;
         }
-        public void AddCompany(Company company)
+        public void AddCompany(Company company, string password)
         {
-           
+            company.PasswordHash = HashUtil.SHA1Hash(password);
             unitOfWork.Add<Company>(company);
             unitOfWork.Commit();
         }
@@ -32,7 +32,7 @@ namespace IT_Recrutement_Link.Service
                 FirstOrDefault<Company>();
             if (company != null)
             {
-                if (password.Equals(company.Password))
+                if (HashUtil.SHA1Hash(password).Equals(company.PasswordHash))
                 {
                     return company;
                 }

@@ -31,7 +31,7 @@ namespace IT_Recrutement_Link.Web.Controllers
             {
                 BlobStorageService storage = new BlobStorageService();
                 company.LogoPictureUrl = storage.Upload(file);
-                companyService.AddCompany(company);
+                companyService.AddCompany(company, company.PasswordHash);
                 return View(company);
             }
             return RedirectToAction("DisplayCompanyProfil");

@@ -16,7 +16,6 @@ namespace IT_Recrutement_Link.Service
         void Update<T>(T entity) where T : class;
         T FindById<T>(int id) where T : class;
         IList<T> FindMany<T>(Expression<Func<T, bool>> where) where T : class;
-        IList<T> FindAll<T>() where T : class;
         void Commit();
         
     }

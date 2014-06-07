@@ -15,14 +15,14 @@ namespace IT_Recrutement_Link.DataAccess.Configuration
             ToTable("Students");
             HasKey(s => s.Id);
             Property(s => s.Email).HasMaxLength(50).IsRequired();
-            Property(c => c.Password).IsRequired();
+            Property(c => c.PasswordHash).IsRequired();
             Property(s => s.Name).HasMaxLength(50).IsRequired();
             Property(s => s.LastName).HasMaxLength(50).IsRequired();
             Property(s => s.DateNaissance).IsRequired();
-/*
+
             Property(s => s.VideoUrl).HasMaxLength(100).IsRequired();
             Property(s => s.SlidesUrl).HasMaxLength(100).IsRequired();
-            Property(s => s.ProfilePictureUrl).HasMaxLength(100).IsRequired();*/
+            Property(s => s.ProfilePictureUrl).HasMaxLength(100).IsRequired();
             Property(s => s.CompetenceSectorName).IsRequired();
            
 
