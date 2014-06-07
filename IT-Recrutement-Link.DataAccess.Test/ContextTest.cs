@@ -8,7 +8,7 @@ namespace IT_Recrutement_Link.DataAccess.Test
     [TestClass]
     public class ContextTest
     {
-        private Context context = new Context();
+       /* private Context context = new Context();
 
         [TestMethod]
         public void ShouldAddEntity()
@@ -61,7 +61,7 @@ namespace IT_Recrutement_Link.DataAccess.Test
     
     static class LegalEntityFactory
     {
-        public static Student CreateStudent(string name, string lastName)
+       /* public static Student CreateStudent(string name, string lastName)
         {
             return new Student { 
                    Name = name,
@@ -98,6 +98,6 @@ namespace IT_Recrutement_Link.DataAccess.Test
                 VideoUrl = "video"
             }; 
         }
-        
+        */
     }
 }

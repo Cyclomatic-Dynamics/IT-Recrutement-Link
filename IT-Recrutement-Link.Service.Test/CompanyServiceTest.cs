@@ -33,7 +33,7 @@ namespace IT_Recrutement_Link.Service.Test
             unitOfWork = new Mock<IUnitOfWork>();
             service = new CompanyService(unitOfWork.Object);
         }
-        [TestMethod]
+        /*[TestMethod]
         public void shouldAddCompany()
         {
             Company newCompany = company;
@@ -44,7 +44,7 @@ namespace IT_Recrutement_Link.Service.Test
             Assert.AreNotEqual(password, newCompany.PasswordHash);
             unitOfWork.Verify(unit => unit.Add<Company>(newCompany), Times.Once());
             unitOfWork.Verify(unit => unit.Commit(), Times.Once());
-        }
+        }*/
         [TestMethod]
         public void shouldUpdateCompany()
         {

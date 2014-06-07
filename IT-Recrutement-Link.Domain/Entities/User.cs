@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IT_Recrutement_Link.Domain.Entities
 {
-    public class User : HashingService
+    public class User //: HashingService
     {
         [Key]
         public int Id { get; set; }
@@ -17,16 +17,9 @@ namespace IT_Recrutement_Link.Domain.Entities
         public string Name { get; set;}
         [Required]
         public string Email { get; set; }
-        private string _passhash;
+        //private string _passhash;
         [Required]
-        public string PasswordHash
-        {
-            get { return _passhash; }
-            set
-            {
-                _passhash = HashSet(PasswordHash); 
-          
-        } }
+        public string Password { get; set; }
         [Required]
         public string VideoUrl { get; set; }
         [Required]

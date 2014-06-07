@@ -15,9 +15,8 @@ namespace IT_Recrutement_Link.Service
         {
             unitOfWork = unit;
         }
-        public void AddStudent(Student student, string password)
+        public void AddStudent(Student student)
         { 
-            student.PasswordHash = HashUtil.SHA1Hash(password);
             unitOfWork.Add<Student>(student);
             unitOfWork.Commit();
         }
@@ -32,16 +31,12 @@ namespace IT_Recrutement_Link.Service
                 throw new EntityNotFoundException<Student>(id);
             }
         }
-        public Student ListStudent(int id)
+        public IList<Student> ListStudent()
         {
-            try
-            {
-                return unitOfWork.FindMany<Student>();
-            }
-            catch (Exception)
-            {
-                throw new EntityNotFoundException<Student>(id);
-            }
+            
+                return unitOfWork.FindAll<Student>();
+            
+            
         }
         public void ModifyStudent(Student student)
         {
@@ -60,7 +55,7 @@ namespace IT_Recrutement_Link.Service
                 FirstOrDefault<Student>();
             if (student != null)
             {
-                if (HashUtil.SHA1Hash(password).Equals(student.PasswordHash))
+                if (password.Equals(student.Password))
                 {
                     return student;
                 }
